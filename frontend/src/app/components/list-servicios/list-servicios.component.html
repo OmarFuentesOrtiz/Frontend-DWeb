@@ -2,30 +2,22 @@
     <h1>Servicios</h1>
     <mat-selection-list [multiple]="false">
         <div class="mat-list-option-cover">
-            <mat-list-option *ngFor="let servicio of this.servicios">
+            <mat-list-option *ngFor="let servicio of this.servicios" >
+                <a routerLink="/detalle/1">Hey</a>
+
                 <div class="d-flex justify-content-between">
                     <span class="servicio-date">
-                        {{ servicio.id }}
+                        {{ servicio.region }}
                     </span>
                     <span class="servicio-date">
                         {{ servicio.modalidad }}
                     </span>
                     <span class="servicio-date">
-                        {{ servicio.region }}
-                    </span>
-                    <span class="servicio-date">
                         {{ servicio.plataforma }}
                     </span>
                     <span class="servicio-date">
-                        {{ servicio.usuario }}
+                        {{ servicio.anfitrion }}
                     </span>
-                    <span class="servicio-date">
-                        {{ servicio.dueDate | date: "mediumDate" }}
-                    </span>
-                    <span class="servicio-date">
-                        {{ servicio.type }}
-                    </span>
-                    
                 </div>
                 <span class="servicio-title">
                     {{ servicio.name.substring(0, 40) }}

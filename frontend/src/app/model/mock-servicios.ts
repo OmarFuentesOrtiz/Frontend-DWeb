@@ -1,35 +1,20 @@
-import { Servicio } from "./servicio";
+import { Servicio } from "./Servicio";
 
-export const SERVICIOS:Servicio[] =  [ 
-    {    id : 1,
-        modalidad: "guia de turismo",
-        region: "Lima",
-        plataforma: "zoom",
-        usuario: "jack",
-        name: "guia de macchu picchu",
-        description: "visita guiada a la ciudadela ",
-        init_date: "1-06-2021",
-        end_date: "1-07-2021",
-        price: 200 },
-    {     id : 2,
-        modalidad: "guia de turismo",
-        region: "Lima",
-        plataforma: "zoom",
-        usuario: "jack",
-        name: "guia de Lineas de Nazca",
-        description: "visita guiada a las Lineas de Nazca ",
-        init_date: "1-06-2021",
-        end_date: "1-07-2021",
-        price: 200},
-    {     id : 3,
-        modalidad: "guia de turismo",
-        region: "Lima",
-        plataforma: "zoom",
-        usuario: "jack",
-        name: "guia de Tarapoto",
-        description: "visita guiada a la naturaleza ",
-        init_date: "1-06-2021",
-        end_date: "1-07-2021",
-        price: 200}
-   
+export const SERVICIOS: Servicio[] =  [ 
+    {
+        id: 1,
+        name: 'Viajes a las ruinas de Chan Chan',
+        region: 'Lima',
+        modalidad: 'Consulta',
+        plataforma: 'Zoom',
+        anfitrion: 'Ms. Jack'
+      },
+      {
+        id: 2,
+        name: 'Viajes a las Macchu Picchu',
+        region: 'Cuzco',
+        modalidad: 'Guia turistica',
+        plataforma: 'Google Meets',
+        anfitrion: 'Ms. Alessandro'
+      }
   ];

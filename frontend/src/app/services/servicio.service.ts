@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { IServicio } from '../interface/interface-servicio';
+import { Servicio } from '../model/Servicio';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class ServicioService {
 
   constructor(private http: HttpClient) { }
 
-  getServicios(): Observable<IServicio[]>{
-    return this.http.get<IServicio[]>(`${environment.apiUrl}servicios`).pipe(
+  getServicios(): Observable<Servicio[]>{
+    return this.http.get<Servicio[]>(`${environment.apiUrl}servicios`).pipe(
       catchError(e => {
         return throwError(e);
       })

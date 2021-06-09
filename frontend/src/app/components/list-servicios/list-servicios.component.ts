@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Servicio } from 'src/app/model/Servicio';
+import { SERVICIOS } from 'src/app/model/mock-servicios';
 import { ServicioService } from 'src/app/services/servicio.service';
 
 @Component({
@@ -8,28 +10,10 @@ import { ServicioService } from 'src/app/services/servicio.service';
 })
 export class ListServiciosComponent implements OnInit {
 
-  servicios = [
-    {
-      name: 'Viajes a las ruinas de Chan Chan',
-      id: 1,
-      modalidad: 'Guia turística',
-      region: 'Lima',
-      plataforma: 'Zoom',
-      usuario: 'Pedro Picapiedra',
-      dueDate: '03/05/2021',
-      type: 'Done'
-    },
-    {
-      name: 'Viajes a las Macchu Picchu',
-      id: 1,
-      modalidad: 'Guia turística',
-      region: 'Cuzco',
-      plataforma: 'Google Meets',
-      usuario: 'Pablo',
-      dueDate: '03/05/2021',
-      type: 'Done'
-    }
-  ]
+  servicios: Servicio[] = SERVICIOS;
+
+  selectedServicio ?: Servicio;
+
   constructor(private ServicioService: ServicioService) { }
 
   ngOnInit(): void {
