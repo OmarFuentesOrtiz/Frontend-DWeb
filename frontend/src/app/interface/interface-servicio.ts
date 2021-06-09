@@ -1,12 +1,12 @@
 export interface IServicio{
         id: number,
-        modalidad: string,
-        region: string,
-        plataforma: string,
-        usuario: string,
         name: string,
         description: string,
-        init_date: string,
-        end_date: string,
-        price: number 
+        init_valid_date: string,
+        end_valid_date: string,
+        price: number, 
+        modalidad_id: number,
+        region_id: number,
+        plataforma_id: number,
+        usuario_id: number
 };
