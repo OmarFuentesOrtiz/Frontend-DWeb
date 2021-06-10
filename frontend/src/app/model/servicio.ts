@@ -1,9 +1,11 @@
 export class Servicio{
         id: number
-        name: string
-        region: string
         modalidad: string
+        region: string
         plataforma: string
-        anfitrion: string
-        img: string      
+        usuario: string
+        name: string
+        init_valid_date: string
+        end_valid_date: string
+        price: number    
 }

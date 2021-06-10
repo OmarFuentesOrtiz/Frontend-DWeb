@@ -14,7 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatToolbarModule,
     MatCardModule,
     AppRoutingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
   exports:[
     MatListModule,

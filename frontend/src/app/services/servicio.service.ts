@@ -10,23 +10,20 @@ import { Servicio } from '../model/Servicio';
 })
 export class ServicioService {
 
-  private API = "http://localhost:8089/booking-restaurant/v1/payments/";
+  //private API = "http://localhost:8089/booking-restaurant/v1/payments/";
+  private API = "https://app-neo-adventura.herokuapp.com/neo-adventura/v1/";
 
   constructor(private http: HttpClient) { }
 
-  getServicios(): Observable<Servicio[]>{
-    return this.http.get<Servicio[]>(`${environment.apiUrl}servicios`).pipe(
-      catchError(e => {
-        return throwError(e);
-      })
-    )
+  getAllServicios() {
+    return this.http.get(this.API + 'servicios')
   }
+
   getServicio(id: number){
     return this.http.get(this.API + 'servicios' +'/' + id)
   }
 
   /*postServicios(servicio: IServicio): Observable<>{
-    
   }*/
   
 }

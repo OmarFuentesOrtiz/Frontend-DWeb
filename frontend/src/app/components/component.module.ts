@@ -7,19 +7,14 @@ import { AnfitrionComponent } from './anfitrion/anfitrion.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LogeandoComponent } from './logeando/logeando.component';
-import { RegistrarComponent } from './registrar/registrar.component';
-
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
     ListServiciosComponent,
     AnfitrionComponent,
     DetalleComponent,
-    HeaderComponent,
-    LogeandoComponent,
-    RegistrarComponent,
-
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +22,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-
+    AppRoutingModule,
   ],
   exports: [
     ChartsModule,
@@ -36,8 +31,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    LogeandoComponent,
-    RegistrarComponent
+    AppRoutingModule
   ]
 })
 export class ComponentModule { }

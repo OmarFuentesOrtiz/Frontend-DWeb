@@ -35,12 +35,14 @@ export class DetalleComponent implements OnInit {
 
     this.servicio = {
       id: 1,
-      name: 'Viajes a las ruinas de Chan Chan',
+      modalidad: 'Consulta', 
       region: 'Lima',
-      modalidad: 'Consulta',
       plataforma: 'Zoom',
-      anfitrion: 'Ms. Jack',
-      img: 'https://www.peruhop.com/wp-content/uploads/Mascotte-of-Chan-Chan-Small.jpg'
+      usuario: 'usuario 1',
+      name: 'Viajes a las ruinas de Chan Chan',
+      init_valid_date: '10/06/2021',
+      end_valid_date: '10/06/2021',
+      price: 200,  
     }
 
   }

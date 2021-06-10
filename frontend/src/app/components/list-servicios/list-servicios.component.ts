@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Servicio } from 'src/app/model/Servicio';
-import { SERVICIOS } from 'src/app/model/mock-servicios';
 import { ServicioService } from 'src/app/services/servicio.service';
 import { observable } from 'rxjs';
 
@@ -11,19 +10,21 @@ import { observable } from 'rxjs';
 })
 export class ListServiciosComponent implements OnInit {
 
-  servicios?: Servicio[] = SERVICIOS;
+  servicios?: Servicio[];
 
   selectedServicio ?: Servicio;
 
   constructor(private ServicioService: ServicioService) { }
 
-  ngOnInit(): void {
-    // getALL();
+  getAllServicios(): void {
+    this.ServicioService.getAllServicios()
+    .subscribe((result: any) => this.servicios = result.data)
   }
 
-  getAll(): void {
-    this.ServicioService.getServicios()
-    .subscribe(data => this.servicios=data);
+  ngOnInit(): void {
+    this.getAllServicios();
   }
+
+  
 
 }
