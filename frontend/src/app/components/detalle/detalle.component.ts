@@ -16,12 +16,11 @@ export class DetalleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getServicio();
+    // this.getServicio();
   }
 
   getServicio(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    
   }
 
 }

@@ -6,23 +6,28 @@ import { ListServiciosComponent } from './list-servicios/list-servicios.componen
 import { MaterialModule } from '../material/material.module';
 import { AnfitrionComponent } from './anfitrion/anfitrion.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
     ListServiciosComponent,
     AnfitrionComponent,
-    DetalleComponent
+    DetalleComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
     ChartsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   exports: [
     HomeComponent,
     ChartsModule,
     ListServiciosComponent,
+    HeaderComponent,
     MaterialModule,
   ]
 })

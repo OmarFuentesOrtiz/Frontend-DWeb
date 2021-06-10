@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentModule } from './components/component.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DetalleComponent } from './components/detalle/detalle.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +21,7 @@ import { DetalleComponent } from './components/detalle/detalle.component';
     BrowserAnimationsModule,
     ComponentModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,8 +5,7 @@ import { DetalleComponent } from './components/detalle/detalle.component';
 import { ServicioComponent } from './components/servicio/servicio.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/servicio', pathMatch: 'full'},
-  { path: 'servicio', component: ServicioComponent },
+  { path: '', component: ServicioComponent },
   { path: 'detalle/:id', component: DetalleComponent },
   { path: 'anfitrion', component: AnfitrionComponent }
 ];

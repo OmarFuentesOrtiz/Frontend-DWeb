@@ -1,31 +1,10 @@
-.servicio h1 {
-    font-weight: 500;
-    padding: 10px 12px 0 12px;
-    background: #f3f5fa;
-  }
-  .servicio {
-    background: #f3f5fa;
-    margin-bottom: 65px;
-  }
-  mat-selection-list {
-    height: 100%;
-  }
-  .mat-list-option-cover {
-    padding: 15px;
-  }
-  mat-list-option {
-    background-color: white;
-    border-radius: 10px;
-    margin: 10px 0 10px 0;
-    padding: 10px;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .mat-list-item {
-    height: 70px !important;
-  }
-  .servicio-date {
-    color: #ccc;
-  }
-  
+.imageCard {
+  max-width: 400px;
+  height: 300px;
+}
+
+.card-theme{
+  margin-top:30px;
+  margin: 10px;
+  background-size: cover;
+}

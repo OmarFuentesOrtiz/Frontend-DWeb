@@ -7,7 +7,8 @@ export const SERVICIOS: Servicio[] =  [
         region: 'Lima',
         modalidad: 'Consulta',
         plataforma: 'Zoom',
-        anfitrion: 'Ms. Jack'
+        anfitrion: 'Ms. Jack',
+        img: 'https://www.peruhop.com/wp-content/uploads/Mascotte-of-Chan-Chan-Small.jpg'
       },
       {
         id: 2,
@@ -15,6 +16,7 @@ export const SERVICIOS: Servicio[] =  [
         region: 'Cuzco',
         modalidad: 'Guia turistica',
         plataforma: 'Google Meets',
-        anfitrion: 'Ms. Alessandro'
+        anfitrion: 'Ms. Alessandro',
+        img: 'https://e.rpp-noticias.io/xlarge/2018/12/31/145514_733004.png'
       }
   ];

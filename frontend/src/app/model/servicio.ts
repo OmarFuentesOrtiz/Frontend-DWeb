@@ -4,5 +4,6 @@ export interface Servicio{
         region: string,
         modalidad: string,
         plataforma: string,
-        anfitrion: string          
+        anfitrion: string,
+        img: string      
 };
