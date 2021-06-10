@@ -1,7 +1,37 @@
-<div *ngIf="servicio">
-    <h2>{{ servicio.name | uppercase }} Details</h2>
+<div>
+    <h2>{{ servicio.name  }} Details</h2>
     <h2>{{ servicio.modalidad }} Details</h2>
     <h2>{{ servicio.plataforma }} Details</h2>
     <h2>{{ servicio.region }} Details</h2>
     <h2>{{ servicio.anfitrion }} Details</h2>
+</div>
+
+<div class="container" *ngIf="servicio">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 pTop50">
+            <mat-card>
+                <div [ngStyle]="{'background-image': 'url(' + servicio.img + ')'}" class="restaurantImage"></div>
+                <h1> {{servicio.name | uppercase }} </h1>
+                <p> {{servicio.region}} </p>
+                <p> {{servicio.plataforma}} </p>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-6 pTop50">
+            <mat-card>
+                <form class="booking-form" [formGroup]="reservaForm" (ngSubmit)="createReserva()">
+                    <h1>Realiza tu reserva del Servicio</h1>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Anfitrion</mat-label>
+                            <input type="text" formControlName="customers" matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                    </div>
+                </form>    
+            </mat-card>
+    </div>
 </div>

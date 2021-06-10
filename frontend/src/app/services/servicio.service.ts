@@ -10,6 +10,8 @@ import { Servicio } from '../model/Servicio';
 })
 export class ServicioService {
 
+  private API = "http://localhost:8089/booking-restaurant/v1/payments/";
+
   constructor(private http: HttpClient) { }
 
   getServicios(): Observable<Servicio[]>{
@@ -19,6 +21,10 @@ export class ServicioService {
       })
     )
   }
+  getServicio(id: number){
+    return this.http.get(this.API + 'servicios' +'/' + id)
+  }
+
   /*postServicios(servicio: IServicio): Observable<>{
     
   }*/
