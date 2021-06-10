@@ -10,10 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    ServicioComponent
+    ServicioComponent,
+
   ],
   imports: [
     BrowserModule,

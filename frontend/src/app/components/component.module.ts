@@ -7,13 +7,19 @@ import { AnfitrionComponent } from './anfitrion/anfitrion.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogeandoComponent } from './logeando/logeando.component';
+import { RegistrarComponent } from './registrar/registrar.component';
+
 
 @NgModule({
   declarations: [
     ListServiciosComponent,
     AnfitrionComponent,
     DetalleComponent,
-    HeaderComponent
+    HeaderComponent,
+    LogeandoComponent,
+    RegistrarComponent,
+
   ],
   imports: [
     CommonModule,
@@ -21,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+
   ],
   exports: [
     ChartsModule,
@@ -28,7 +35,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LogeandoComponent,
+    RegistrarComponent
   ]
 })
 export class ComponentModule { }
