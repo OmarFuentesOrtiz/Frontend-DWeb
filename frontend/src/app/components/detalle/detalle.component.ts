@@ -42,7 +42,8 @@ export class DetalleComponent implements OnInit {
       name: 'Viajes a las ruinas de Chan Chan',
       init_valid_date: '10/06/2021',
       end_valid_date: '10/06/2021',
-      price: 200,  
+      price: 200,
+      description: 'gonna ejoy it'
     }
 
   }

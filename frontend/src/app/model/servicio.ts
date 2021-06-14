@@ -7,5 +7,6 @@ export class Servicio{
         name: string
         init_valid_date: string
         end_valid_date: string
-        price: number    
+        price: number
+        description: string
 }

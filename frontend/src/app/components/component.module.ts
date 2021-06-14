@@ -8,13 +8,15 @@ import { DetalleComponent } from './detalle/detalle.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
+import { ServicioFormComponent } from './servicio-form/servicio-form.component';
 
 @NgModule({
   declarations: [
     ListServiciosComponent,
     AnfitrionComponent,
     DetalleComponent,
-    HeaderComponent
+    HeaderComponent,
+    ServicioFormComponent
   ],
   imports: [
     CommonModule,
