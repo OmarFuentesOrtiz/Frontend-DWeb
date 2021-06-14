@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { ServicioFormComponent } from './servicio-form/servicio-form.component';
+import { PagoFormComponent } from './pago-form/pago-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ServicioFormComponent } from './servicio-form/servicio-form.component';
     AnfitrionComponent,
     DetalleComponent,
     HeaderComponent,
-    ServicioFormComponent
+    ServicioFormComponent,
+    PagoFormComponent
   ],
   imports: [
     CommonModule,
