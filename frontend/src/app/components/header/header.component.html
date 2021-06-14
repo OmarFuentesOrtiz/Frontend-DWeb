@@ -1,7 +1,12 @@
 <h1>Neo Adventura</h1>
 <div>
+
     <mat-toolbar color="primary">
-        <a mat-button class="btn btn-danger" routerLink="servicios" routerLinkActive='active'>Servicios</a>
-        <a mat-button class="btn btn-danger" routerLink="anfitrion" routerLinkActive='active'>Anfitriones</a>
+        <ng-container *ngIf="getCurrentRoute() == '/anfitrion'">
+            <a mat-button class="btn btn-danger" routerLink="/servicios" routerLinkActive='active'>Servicios</a>
+        </ng-container>
+        <ng-container *ngIf="getCurrentRoute() == '/servicios'">
+            <a mat-button class="btn btn-danger" routerLink="/anfitrion" routerLinkActive='active'>Anfitriones</a>
+        </ng-container>
     </mat-toolbar>
 </div>
