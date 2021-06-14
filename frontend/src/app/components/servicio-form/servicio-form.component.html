@@ -6,6 +6,19 @@
   <div [hidden]="submitted">
     <h1>Hero Form</h1>
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input type="text" class="form-control" id="usuario"
+               required
+               [(ngModel)]="model.usuario" name="usuario"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          User log is required
+        </div>
+      </div>
+
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name"
@@ -19,23 +32,73 @@
       </div>
 
 <!--      <div class="form-group">-->
+<!--        <label for="usuario">Usuario</label>-->
+<!--        <input type="text" class="form-control" id="usuario"-->
+<!--               required-->
+<!--               [(ngModel)]="model.usuario" name="usuario"-->
+<!--               #name="ngModel">-->
+<!--        <div [hidden]="name.valid || name.pristine"-->
+<!--             class="alert alert-danger">-->
+<!--          User log is required-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="form-group">
+        <label for="description">Descripción de su servicio</label>
+        <input type="text" class="form-control" id="description"
+               [(ngModel)]="model.description" name="description">
+      </div>
+
+<!--      <div class="form-group">-->
 <!--        <label for="alterEgo">Alter Ego</label>-->
 <!--        <input type="text" class="form-control" id="alterEgo"-->
 <!--               [(ngModel)]="model.alterEgo" name="alterEgo">-->
 <!--      </div>-->
 
-<!--      <div class="form-group">-->
-<!--        <label for="power">Hero Power</label>-->
-<!--        <select class="form-control" id="power"-->
-<!--                required-->
-<!--                [(ngModel)]="model.power" name="power"-->
-<!--                #power="ngModel">-->
-<!--          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>-->
-<!--        </select>-->
-<!--        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">-->
-<!--          Power is required-->
-<!--        </div>-->
-<!--      </div>-->
+      <div class="form-group">
+        <label for="modalidad">Seleccione la modalidad</label>
+        <select class="form-control" id="modalidad"
+                required
+                [(ngModel)]="model.modalidad" name="modalidad.id"
+                #power="ngModel">
+          <option *ngFor="let pow of modalidades" [value]="pow">{{pow.name}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="plataforma">Seleccione la plataforma</label>
+        <select class="form-control" id="plataforma"
+                required
+                [(ngModel)]="model.plataforma" name="plataforma.id"
+                #power="ngModel">
+          <option *ngFor="let pow of plataformas" [value]="pow">{{pow.name}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="region">Seleccione su region</label>
+        <select class="form-control" id="region"
+                required
+                [(ngModel)]="model.region" name="region.id"
+                #power="ngModel">
+          <option *ngFor="let pow of regiones" [value]="pow">{{pow.name}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="precio">Precio de su servicio</label>
+        <input type="text" class="form-control" id="precio"
+               [(ngModel)]="model.price" name="precio">
+      </div>
 
       <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
       <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>

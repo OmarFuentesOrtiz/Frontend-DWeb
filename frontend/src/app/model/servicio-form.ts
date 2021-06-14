@@ -1,5 +1,4 @@
 export class ServicioForm {
-    id: number
     modalidad: number
     region: number
     plataforma: number
