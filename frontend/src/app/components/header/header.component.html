@@ -2,7 +2,7 @@
 <div>
 
     <mat-toolbar color="primary">
-        <ng-container *ngIf="getCurrentRoute() == '/anfitrion'">
+        <ng-container *ngIf="getCurrentRoute() != '/servicios'">
             <a mat-button class="btn btn-danger" routerLink="/servicios" routerLinkActive='active'>Servicios</a>
         </ng-container>
         <ng-container *ngIf="getCurrentRoute() == '/servicios'">

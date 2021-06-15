@@ -22,4 +22,20 @@ export class ControllerService {
   getAllModalidades() {
     return this.http.get(this.API+'modalidades')
   }
+
+  getAllRoles() {
+    return this.http.get(this.API+'roles')
+  }
+
+  getAllCurrencys() {
+    return this.http.get(this.API+'currencys')
+  }
+  getAllMetodos() {
+    return this.http.get(this.API+'metodos')
+  }
+
+  getAllIdiomas() {
+    return this.http.get(this.API+'idiomas')
+  }
 }
+

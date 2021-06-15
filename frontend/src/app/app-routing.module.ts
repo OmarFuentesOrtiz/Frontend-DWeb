@@ -6,6 +6,7 @@ import { RegistrarComponent }from './components/registrar/registrar.component';
 import { LogeandoComponent } from'./components/logeando/logeando.component';
 import { RouterModule, Routes } from '@angular/router';
 import {ServicioFormComponent} from "./components/servicio-form/servicio-form.component";
+import {PagoFormComponent} from "./components/pago-form/pago-form.component";
 
 const routes: Routes = [
   { path: '', component: LogeandoComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'servicios', component: ServicioComponent },
   { path: 'anfitrion', component: AnfitrionComponent },
   { path: 'login', component: LogeandoComponent},
-  { path: 'servicioForm', component: ServicioFormComponent}
+  { path: 'servicioForm', component: ServicioFormComponent},
+  { path: 'pagoForm', component: PagoFormComponent}
 ];
 
 @NgModule({
