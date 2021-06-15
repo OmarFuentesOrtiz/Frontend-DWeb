@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 pTop50">
+            <mat-card>
+                <form class="booking-form">
+                    <h1>Perfil {{ usuario.name }}</h1>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <p for="#check" ><mat-label>Rol name</mat-label></p>
+                            <p> {{usuario.rol_name}} </p>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <p><mat-label>Email</mat-label></p>
+                            <input formControlName="customers" matInput value="{{usuario.email}}">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <p><mat-label>Birth day</mat-label></p>
+                            <p> {{usuario.birth_day}} </p>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <p><mat-label>Name</mat-label></p>
+                            <p> {{usuario.name}} </p>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <p><mat-label>Nickname</mat-label></p>
+                            <input formControlName="customers" matInput value= 
+                            "{{usuario.nickname}}">
+                        </mat-form-field>
+                    </div>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

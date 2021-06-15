@@ -37,5 +37,8 @@ export class ControllerService {
   getAllIdiomas() {
     return this.http.get(this.API+'idiomas')
   }
+  getUsuariobyId(id: number){
+    return this.http.get(this.API+'usuarios' + '/' + id)
+  }
 }
 
