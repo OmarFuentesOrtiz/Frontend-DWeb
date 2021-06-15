@@ -10,6 +10,24 @@
         </div>
     </div>
 
+    <h2>Reviews</h2>
+    <div *ngFor="let r of reviews">
+    <p>Este es un review</p>
+    </div>
+    <!--
+    <div class="container">
+        <h2>Reviews</h2>
+            <p>Es un parrafo</p>
+            <mat-card class="card-theme">
+                <mat-card-content>
+                    <p> {{review.score}} </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    -->
+    
+
     <div class="col-sm-12 col-md-6 pTop50">
             <mat-card>
                 <form class="booking-form" [formGroup]="reservaForm" (ngSubmit)="createReserva()">

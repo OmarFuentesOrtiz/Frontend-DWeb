@@ -18,7 +18,12 @@ export class ListServiciosComponent implements OnInit {
 
   getAllServicios(): void {
     this.ServicioService.getAllServicios()
-    .subscribe((result: any) => this.servicios = result.data)
+    .subscribe((result: any) => 
+    {
+      this.servicios = result.data
+      console.log(result.data)
+    })
+
   }
 
   ngOnInit(): void {

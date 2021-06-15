@@ -35,6 +35,7 @@ import { ReviewFormComponent } from './review-form/review-form.component';
   exports: [
     ChartsModule,
     ListServiciosComponent,
+    DetalleComponent,
     HeaderComponent,
     MaterialModule,
     FormsModule,

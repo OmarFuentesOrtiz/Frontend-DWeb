@@ -16,7 +16,7 @@ export class DetalleComponent implements OnInit {
   public reservaForm: FormGroup;
   public servicio: Servicio = new Servicio();
   private idServicio: number;
-  public reviews: Review[];
+  public reviews ?: Review[];
 
   constructor(
     private servicioService: ServicioService,
@@ -25,16 +25,12 @@ export class DetalleComponent implements OnInit {
     private controllerService: ControllerService
   ) { }
 
-  ngOnInit(): void {
-    this.idServicio = Number(this.route.snapshot.paramMap.get('id'));
-    this.getServicio();
-    this.getReviews();
-  }
+  
 
   getServicio(): void{
     this.servicioService.getServicio(this.idServicio).subscribe(
       (result: any) => {
-        this.servicio = result;
+        this.servicio = result.data
       }
     )
   }
@@ -42,7 +38,10 @@ export class DetalleComponent implements OnInit {
   getReviews(): void{
     this.controllerService.getReviews().subscribe(
       (result: any) => {
-        this.servicio = result;
+        console.log('Reviews ', result)
+        this.reviews = result.data
+        console.log('Reviews  ', this.reviews)
+    //    this.reviews.filter(x => x.servicio_id == this.servicio.id)
       }
     )
   }
@@ -51,7 +50,9 @@ export class DetalleComponent implements OnInit {
     true;
   }
 
-
-  
-
+  ngOnInit(): void {
+    this.idServicio = Number(this.route.snapshot.paramMap.get('id'));
+    this.getServicio();
+    this.getReviews();
+  }
 }
