@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {UpUsuario} from "../model/up-usuario";
 
 @Injectable({
   providedIn: 'root'
@@ -37,11 +38,14 @@ export class ControllerService {
   getAllIdiomas() {
     return this.http.get(this.API+'idiomas')
   }
-  getUsuariobyId(id: number){
+  getUsuarioById(id: number){
     return this.http.get(this.API+'usuarios' + '/' + id)
   }
-  getReviews(){
-    return this.http.get(this.API+'reviews')
+  getReviews() {
+    return this.http.get(this.API + 'reviews')
+  }
+  saveUsuario(body: any){
+    return this.http.put(this.API+'usuarios', body)
   }
 }
 
