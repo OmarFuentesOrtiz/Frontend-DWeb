@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { ServicioFormComponent } from './servicio-form/servicio-form.component';
+import { ReviewFormComponent } from './review-form/review-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ServicioFormComponent } from './servicio-form/servicio-form.component';
     AnfitrionComponent,
     DetalleComponent,
     HeaderComponent,
-    ServicioFormComponent
+    ServicioFormComponent,
+    ReviewFormComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { ServicioFormComponent } from './servicio-form/servicio-form.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReviewFormComponent
   ]
 })
 export class ComponentModule { }

@@ -1,0 +1,29 @@
+
+<h2>Escribe tu comentario</h2>
+
+<div class="container">
+        <h1>Review Form</h1>
+
+        <div class="form-group">
+            <label for="description">Comentario de tu servicio</label>
+            <input type="text" class="form-control" id="description"
+                   [(ngModel)]="model.description" name="description">
+          </div>
+        <input type="checkbox"> Reportar
+          <!-- <mat-checkbox class="reporte" [formGroup]="ReviewForm" (ngSubmit)="createReport()">Reportar</mat-checkbox>-->
+<form>
+        <p class="clasificacion">
+            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+            --><label for="radio1">★</label><!--
+            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+            --><label for="radio2">★</label><!--
+            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+            --><label for="radio3">★</label><!--
+            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+            --><label for="radio4">★</label><!--
+            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+            --><label for="radio5">★</label>
+          </p>
+        </form>
+        
+</div>
