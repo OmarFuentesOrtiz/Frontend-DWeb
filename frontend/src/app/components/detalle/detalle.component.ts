@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Review } from 'src/app/model/review';
 import { Servicio } from 'src/app/model/Servicio';
+import { ControllerService } from 'src/app/services/controller.service';
 import { ServicioService } from 'src/app/services/servicio.service';
 
 @Component({
@@ -14,16 +16,19 @@ export class DetalleComponent implements OnInit {
   public reservaForm: FormGroup;
   public servicio: Servicio = new Servicio();
   private idServicio: number;
+  public reviews: Review[];
 
   constructor(
     private servicioService: ServicioService,
     private route:ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private controllerService: ControllerService
   ) { }
 
   ngOnInit(): void {
     this.idServicio = Number(this.route.snapshot.paramMap.get('id'));
     this.getServicio();
+    this.getReviews();
   }
 
   getServicio(): void{
@@ -32,20 +37,14 @@ export class DetalleComponent implements OnInit {
         this.servicio = result;
       }
     )
+  }
 
-    this.servicio = {
-      id: 1,
-      modalidad: 'Consulta', 
-      region: 'Lima',
-      plataforma: 'Zoom',
-      usuario: 'usuario 1',
-      name: 'Viajes a las ruinas de Chan Chan',
-      init_valid_date: '10/06/2021',
-      end_valid_date: '10/06/2021',
-      price: 200,
-      description: 'gonna ejoy it'
-    }
-
+  getReviews(): void{
+    this.controllerService.getReviews().subscribe(
+      (result: any) => {
+        this.servicio = result;
+      }
+    )
   }
 
   createReserva() {

@@ -27,4 +27,7 @@ export class PerfilComponent implements OnInit {
     })
   }
 
+  submit(){
+    true;
+  }
 }

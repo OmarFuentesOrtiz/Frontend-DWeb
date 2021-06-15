@@ -40,5 +40,8 @@ export class ControllerService {
   getUsuariobyId(id: number){
     return this.http.get(this.API+'usuarios' + '/' + id)
   }
+  getReviews(){
+    return this.http.get(this.API+'reviews')
+  }
 }
 
