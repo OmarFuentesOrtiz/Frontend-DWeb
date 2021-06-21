@@ -42,7 +42,11 @@ export class ServicioFormComponent implements OnInit {
 
   submitted = false;
 
-  onSubmit() {this.submitted = true; }
+  onSubmit() {
+    this.submitted = true;
+    this.controllerService.postServicio(this.model)
+        .subscribe((result:any)=> this.model = result.data)
+  }
 
   model = new ServicioForm();
 

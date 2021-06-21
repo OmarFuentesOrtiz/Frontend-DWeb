@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {UpUsuario} from "../model/up-usuario";
+import {ServicioForm} from "../model/servicio-form";
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +48,9 @@ export class ControllerService {
   saveUsuario(body: UpUsuario){
     return this.http.put<any>(this.API+'usuarios', body)
   }
+  postServicio(body: ServicioForm) {
+    return this.http.post<any>(this.API + 'servicios', body)
+  }
+
 }
 
