@@ -44,8 +44,8 @@ export class ControllerService {
   getReviews() {
     return this.http.get(this.API + 'reviews')
   }
-  saveUsuario(body: any){
-    return this.http.put(this.API+'usuarios', body)
+  saveUsuario(body: UpUsuario){
+    return this.http.put<any>(this.API+'usuarios', body)
   }
 }
 

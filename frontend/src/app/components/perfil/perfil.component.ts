@@ -35,26 +35,25 @@ export class PerfilComponent implements OnInit {
 
   getUsuario():void {
     this.controllerService.getUsuarioById(this.idUsuario)
-    .subscribe((result:any) => { this.usuario = result.data
-    })
+        .subscribe((result:any) => { this.usuario = result.data })
   }
 
   // submit(email:string, nick:string, rol:number){
   submit() {
     this.save_model.email = this.usuario.email;
-    this.save_model.nickname = this.usuario.nickname;
+    this.save_model.nickname = this.usuario.nickname.replace(/@/g, '');
     this.save_model.rol_id = 2;
 
-    console.log(this.save_model.id);
-    console.log(this.save_model.rol_id);
-    console.log(this.save_model.nickname);
-    console.log(this.save_model.email);
-
-    this.saveUsuario();
-  }
-
-  saveUsuario():void{
     this.controllerService.saveUsuario(this.save_model)
+        .subscribe({
+            next: data => {
+                this.usuario = data.usuario;
+            },
+            error: error => {
+                // this.errorMessage = error.message;
+                console.error('There was an error!', error);
+            }
+        });
   }
 
   submitted = false;
