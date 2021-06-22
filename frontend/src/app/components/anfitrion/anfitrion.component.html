@@ -1,4 +1,23 @@
 <app-header></app-header>
 <h2>Búsqueda por Anfitrion</h2>
 <p>Este es una barra de búsqueda</p>
-<app-list-servicios></app-list-servicios>
+<div class="container">
+    <div class="row">
+        <div class="column-4" *ngFor="let anfitrion of this.anfitriones">
+            <mat-card class="card-theme">
+                <mat-card-header>
+                    <mat-card-title> {{anfitrion.name}} </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image class="imageCard" src="https://e.rpp-noticias.io/xlarge/2018/12/31/145514_733004.png" alt="imagen del lugar">
+                <mat-card-content>
+                    <p> {{anfitrion.name}} </p>
+                    <p> {{anfitrion.nickname}} </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button [routerLink]="['/detalle', anfitrion.id]" >Detalles</button>
+                </mat-card-actions>
+            </mat-card>
+
+        </div>
+    </div>
+</div>

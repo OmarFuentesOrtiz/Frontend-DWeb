@@ -42,6 +42,9 @@ export class ControllerService {
   getUsuarioById(id: number){
     return this.http.get(this.API+'usuarios' + '/' + id)
   }
+  getAnfitriones() {
+    return this.http.get(this.API+'anfitriones')
+  }
   getReviews() {
     return this.http.get(this.API + 'reviews')
   }
