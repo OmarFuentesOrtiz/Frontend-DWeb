@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [],
@@ -15,13 +16,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatCardModule,
     AppRoutingModule,
     MatFormFieldModule,
+    MatIconModule
   ],
   exports:[
     MatListModule,
     MatToolbarModule,
     MatCardModule,
     AppRoutingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule
   ]
 })
 export class MaterialModule { }

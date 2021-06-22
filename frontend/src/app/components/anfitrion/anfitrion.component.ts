@@ -16,6 +16,8 @@ export class AnfitrionComponent implements OnInit {
   }
 
   anfitriones?: Anfitrion[];
+  value = '';
+
 
   getAllAnfitriones(): void {
     this.controllerService.getAnfitriones()
@@ -24,6 +26,20 @@ export class AnfitrionComponent implements OnInit {
           this.anfitriones = result.data
         })
   }
+
+  
+  Anfitrionstarts(name: string):boolean {
+    if(this.value == ""){
+      return true;
+    }
+    if(name.toLowerCase().startsWith(this.value.toLowerCase())){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
 
 
 }

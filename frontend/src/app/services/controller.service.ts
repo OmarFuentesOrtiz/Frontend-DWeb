@@ -29,6 +29,10 @@ export class ControllerService {
     return this.http.get(this.API+'roles')
   }
 
+  getAllUsuarios() {
+    return this.http.get(this.API+'usuarios')
+  }
+
   getAllCurrencys() {
     return this.http.get(this.API+'currencys')
   }
