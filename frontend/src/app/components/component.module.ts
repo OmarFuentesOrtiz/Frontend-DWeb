@@ -11,6 +11,7 @@ import { ServicioFormComponent } from './servicio-form/servicio-form.component';
 import { PagoFormComponent } from './pago-form/pago-form.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ReviewFormComponent } from './review-form/review-form.component';
+import { LogeandoComponent } from './logeando/logeando.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReviewFormComponent } from './review-form/review-form.component';
     ServicioFormComponent,
     PagoFormComponent,
     PerfilComponent,
-    ReviewFormComponent
+    ReviewFormComponent,
+    LogeandoComponent
   ],
   imports: [
     CommonModule,

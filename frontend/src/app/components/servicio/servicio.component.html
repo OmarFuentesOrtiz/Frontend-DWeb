@@ -5,6 +5,18 @@
 <div class="form-group">
     <label for="nombre">Ingresa el nombre del servicio:</label>
     <input matInput type="text" class="form-control" id="nombre" [(ngModel)]="value">
+    <!-- <div class="form-group">
+        <label for="modalidad">Seleccione la modalidad</label>
+        <select class="form-control" id="modalidad"
+                required
+                [(ngModel)]="model.modalidad_id" name="modalidad.id"
+                #power="ngModel">
+          <option *ngFor="let pow of tags" [value]="pow.id ">{{pow.name}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div> -->
 </div>
 
 <div class="container">

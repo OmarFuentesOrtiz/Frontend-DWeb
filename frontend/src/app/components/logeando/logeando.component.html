@@ -1,21 +1,20 @@
-<form action="action_page.php" method="post">
+
   <div class="imgcontainer">
     <img src="https://i.postimg.cc/9XkCD2Rn/neovim2.png" alt="NeoAdventuraLogo" class="avatar">
   </div>
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+ <!--   <div class="column-4" *ngFor="let usuarios of this.usuarios"></div>
+      <div *ngIf="Anfitrionstarts(usuarios.name)"></div>-->
 
-    <a href="http://localhost:4200/servicios"><button type="button">Login</button></a>
-<!--    This button may be an submit but we don't have define that action_page.php-->
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    <label for="uname"><b>Usuario</b></label>
+    <input type="text" [(ngModel)]="value" placeholder="Ingresa tu nombre de usuario" >
+
+    <button type="button" (click)="validar()">Ingresar</button>
+
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
     <a href="https://alessandro5c.github.io/VacacionesEnVR/index.html"><button type="button" class="cancelbtn" >Cancelar</button></a>
     <span class="psw">Registrate<a href="http://localhost:4200/registrar"> Aqui</a></span>
   </div>
-</form>

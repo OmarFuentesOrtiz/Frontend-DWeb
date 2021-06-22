@@ -12,6 +12,9 @@ export class ControllerService {
 
   constructor(private http: HttpClient) { }
 
+  getAllUsuarios(){
+    return this.http.get(this.API+'usuarios')
+  }
   getAllRegiones() {
     return this.http.get(this.API+'regions')
   }
@@ -29,10 +32,6 @@ export class ControllerService {
     return this.http.get(this.API+'roles')
   }
 
-  getAllUsuarios() {
-    return this.http.get(this.API+'usuarios')
-  }
-
   getAllCurrencys() {
     return this.http.get(this.API+'currencys')
   }
@@ -46,11 +45,12 @@ export class ControllerService {
   getUsuarioById(id: number){
     return this.http.get(this.API+'usuarios' + '/' + id)
   }
-  getAnfitriones() {
-    return this.http.get(this.API+'anfitriones')
-  }
   getReviews() {
     return this.http.get(this.API + 'reviews')
+  }
+
+  getAnfitriones() {
+    return this.http.get(this.API+'anfitriones')
   }
   saveUsuario(body: UpUsuario){
     return this.http.put<any>(this.API+'usuarios', body)
