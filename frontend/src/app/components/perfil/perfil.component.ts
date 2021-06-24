@@ -12,8 +12,8 @@ import {TwoValModel} from "../../model/two-val-model";
 })
 export class PerfilComponent implements OnInit {
 
-  usuario = new Usuario();
-  idUsuario: number;
+  usuario: Usuario;
+  usuarioId: number;
 
   roles?: TwoValModel[];
   save_model = new UpUsuario();
@@ -22,8 +22,8 @@ export class PerfilComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.idUsuario = Number(this.route.snapshot.paramMap.get('id'))
-    this.save_model.id= this.idUsuario;
+    this.usuarioId = Number(this.route.snapshot.paramMap.get('id'))
+    this.save_model.id= this.usuarioId;
     this.getAllRoles();
     this.getUsuario();
   }
@@ -34,7 +34,7 @@ export class PerfilComponent implements OnInit {
   }
 
   getUsuario():void {
-    this.controllerService.getUsuarioById(this.idUsuario)
+    this.controllerService.getUsuarioById(this.usuarioId)
         .subscribe((result:any) => { this.usuario = result.data })
   }
 

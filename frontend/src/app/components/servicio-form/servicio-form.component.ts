@@ -1,7 +1,10 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
-import {ServicioForm} from "../../model/servicio-form";
-import {TwoValModel} from "../../model/two-val-model";
-import {ControllerService} from "../../services/controller.service";
+import { ActivatedRoute } from '@angular/router';
+import { Anfitrion } from 'src/app/model/anfitrion';
+import { ServicioForm } from "../../model/servicio-form";
+import { TwoValModel } from "../../model/two-val-model";
+import { ControllerService } from "../../services/controller.service";
 
 @Component({
   selector: 'app-servicio-form',
@@ -10,15 +13,19 @@ import {ControllerService} from "../../services/controller.service";
 })
 export class ServicioFormComponent implements OnInit {
 
-  constructor(private controllerService:ControllerService) { }
+  anfitrion: Anfitrion;
+  anfitrionId: number;
+  
 
-  ngOnInit(): void {
-    this.getAllPaises();
-    this.getAllRegiones();
-    this.getAllModalidades();
-    this.getAllPlataformas();
+  constructor(private controllerService:ControllerService,
+    private route: ActivatedRoute) { }
+
+  
+
+  getAnfitrion(){
+    this.controllerService.getAnfitrionById(this.anfitrionId)
+    .subscribe((result:any) => {this.anfitrion = result.data })
   }
-
   modalidades?: TwoValModel[];
   getAllModalidades():void {
     this.controllerService.getAllModalidades()
@@ -52,5 +59,14 @@ export class ServicioFormComponent implements OnInit {
 
   newHero() {
     this.model = new ServicioForm();
+  }
+
+  ngOnInit(): void {
+    this.anfitrionId = Number(this.route.snapshot.paramMap.get('id'));
+    this.getAnfitrion();
+    this.getAllPaises();
+    this.getAllRegiones();
+    this.getAllModalidades();
+    this.getAllPlataformas();
   }
 }

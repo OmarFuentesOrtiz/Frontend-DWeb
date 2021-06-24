@@ -52,6 +52,13 @@ export class ControllerService {
   getAnfitriones() {
     return this.http.get(this.API+'anfitriones')
   }
+  getAnfitrionById(id: number) {
+    return this.http.get(this.API+'anfitriones'+ '/' + id)
+  }
+
+  getServiciosByAnfitrionId(id: number){
+    return this.http.get(this.API+'servicios'+'/'+'anfitrion'+'/'+ id)
+  }
   saveUsuario(body: UpUsuario){
     return this.http.put<any>(this.API+'usuarios', body)
   }

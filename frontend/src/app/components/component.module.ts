@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 import { MaterialModule } from '../material/material.module';
 import { AnfitrionComponent } from './anfitrion/anfitrion.component';
-import { DetalleComponent } from './detalle/detalle.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
@@ -12,17 +11,20 @@ import { PagoFormComponent } from './pago-form/pago-form.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ReviewFormComponent } from './review-form/review-form.component';
 import { LogeandoComponent } from './logeando/logeando.component';
+import { DetalleServicioComponent } from './detalle-servicio/detalle-servicio.component';
+import { DetalleAnfitrionComponent } from './detalle-anfitrion/detalle-anfitrion.component';
 
 @NgModule({
   declarations: [
     AnfitrionComponent,
-    DetalleComponent,
     HeaderComponent,
     ServicioFormComponent,
     PagoFormComponent,
     PerfilComponent,
     ReviewFormComponent,
-    LogeandoComponent
+    LogeandoComponent,
+    DetalleServicioComponent,
+    DetalleAnfitrionComponent
   ],
   imports: [
     CommonModule,
@@ -34,14 +36,14 @@ import { LogeandoComponent } from './logeando/logeando.component';
   ],
   exports: [
     ChartsModule,
-    DetalleComponent,
     HeaderComponent,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     PerfilComponent,
-    ReviewFormComponent
+    ReviewFormComponent,
+    ServicioFormComponent
   ]
 })
 export class ComponentModule { }

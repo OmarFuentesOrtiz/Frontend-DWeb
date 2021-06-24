@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [usuarioId] = "usuarioId"></app-header>
 <h2>Búsqueda por Anfitrion</h2>
 <p>Este es una barra de búsqueda</p>
 
@@ -22,7 +22,7 @@
                         <p> {{anfitrion.nickname}} </p>
                     </mat-card-content>
                     <mat-card-actions>
-                        <button mat-button [routerLink]="['/detalle', anfitrion.id]" >Detalles</button>
+                        <button mat-button [routerLink]="['/usuario', usuarioId, 'detalleAnfitrion', anfitrion.id]" >Detalles</button>
                     </mat-card-actions>
                 </mat-card>
             </div>

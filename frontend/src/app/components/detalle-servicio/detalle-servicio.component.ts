@@ -3,19 +3,22 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Review } from 'src/app/model/review';
 import { Servicio } from 'src/app/model/Servicio';
+import { Usuario } from 'src/app/model/Usuario';
 import { ControllerService } from 'src/app/services/controller.service';
 import { ServicioService } from 'src/app/services/servicio.service';
 
 @Component({
-  selector: 'app-detalle',
-  templateUrl: './detalle.component.html',
-  styleUrls: ['./detalle.component.css']
+  selector: 'app-detalle-servicio',
+  templateUrl: './detalle-servicio.component.html',
+  styleUrls: ['./detalle-servicio.component.css']
 })
-export class DetalleComponent implements OnInit {
+export class DetalleServicioComponent implements OnInit {
 
   public reservaForm: FormGroup;
   public servicio: Servicio = new Servicio();
+  public usuario: Usuario = new Usuario();
   private idServicio: number;
+  private idUsuario: number;
   public reviews ?: Review[];
 
   constructor(
@@ -25,12 +28,25 @@ export class DetalleComponent implements OnInit {
     private controllerService: ControllerService
   ) { }
 
-  
+  ngOnInit(): void {
+    this.idServicio = Number(this.route.snapshot.paramMap.get('sid'));
+    this.idUsuario = Number(this.route.snapshot.paramMap.get('id'));
+    this.getServicio();
+    this.getUsuario();
+    this.getReviews();
+  }
 
   getServicio(): void{
     this.servicioService.getServicio(this.idServicio).subscribe(
       (result: any) => {
         this.servicio = result.data
+      }
+    )
+  }
+  getUsuario(): void{
+    this.controllerService.getUsuarioById(this.idUsuario).subscribe(
+      (result: any) => {
+        this.usuario = result.data
       }
     )
   }
@@ -48,11 +64,5 @@ export class DetalleComponent implements OnInit {
 
   createReserva() {
     true;
-  }
-
-  ngOnInit(): void {
-    this.idServicio = Number(this.route.snapshot.paramMap.get('id'));
-    this.getServicio();
-    this.getReviews();
   }
 }

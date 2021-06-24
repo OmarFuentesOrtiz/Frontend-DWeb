@@ -1,6 +1,8 @@
-<app-header></app-header>
+<app-header  [usuarioId] = "anfitrion.id"></app-header>
 <h2>Crea aqui tu servicio</h2>
 <p>Este es tu formulario</p>
+
+<p> {{anfitrion.name}} es hora de crear un servicio </p>
 
 <div class="container">
   <div [hidden]="submitted">

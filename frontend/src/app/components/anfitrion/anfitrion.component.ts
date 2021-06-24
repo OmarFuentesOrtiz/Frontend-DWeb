@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Anfitrion} from "../../model/anfitrion";
-import {ControllerService} from "../../services/controller.service";
+import { ActivatedRoute } from '@angular/router';
+import { Usuario } from 'src/app/model/Usuario';
+
+import { Anfitrion } from "../../model/anfitrion";
+import { ControllerService } from "../../services/controller.service";
 
 @Component({
   selector: 'app-anfitrion',
@@ -9,15 +12,25 @@ import {ControllerService} from "../../services/controller.service";
 })
 export class AnfitrionComponent implements OnInit {
 
-  constructor(private controllerService:ControllerService) { }
+  usuario: Usuario;
+  usuarioId: number;
+  
+  anfitriones: Anfitrion[];
+  value = '';
+
+  constructor(private controllerService:ControllerService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+      this.usuarioId = Number(this.route.snapshot.paramMap.get('id'));
+      this.getUsuario();
       this.getAllAnfitriones();
   }
 
-  anfitriones?: Anfitrion[];
-  value = '';
-
+  getUsuario(): void {
+    this.controllerService.getAnfitrionById(this.usuarioId)
+    .subscribe((result:any) => this.usuario = result.data );
+  }
 
   getAllAnfitriones(): void {
     this.controllerService.getAnfitriones()
@@ -38,6 +51,9 @@ export class AnfitrionComponent implements OnInit {
     else{
       return false;
     }
+
+    
+
   }
 
 

@@ -1,13 +1,15 @@
 <h1>Neo Adventura</h1>
-<div>
 
+<div>
     <mat-toolbar color="primary">
-        <ng-container *ngIf="getCurrentRoute() != '/servicios'">
-            <a mat-button class="btn btn-danger" routerLink="/servicios" routerLinkActive='active'>Servicios</a>
+        <ng-container *ngIf = "lblServicio == true">
+            <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario.id, 'servicios']" routerLinkActive='active'>Servicios</a>
         </ng-container>
-        <ng-container *ngIf="getCurrentRoute() == '/servicios'">
-            <a mat-button class="btn btn-danger" routerLink="/anfitrion" routerLinkActive='active'>Anfitriones</a>
+        <ng-container *ngIf = "lblAnfitrion == true">
+            <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario.id, 'anfitrion']" routerLinkActive='active'>Anfitriones</a>
         </ng-container>
-        <a mat-button class="btn btn-danger" routerLink="/servicioForm" routerLinkActive='active'>Añadir un servicio</a>
+        <a  *ngIf = "usuario.rol_name=='Anfitrión'" mat-button class="btn btn-danger" [routerLink]= "['/', usuario.id, 'servicioForm']" routerLinkActive='active'>Añadir un servicio</a>
+        <a mat-button class="btn btn-danger" [routerLink]= "['/', usuario.id, 'perfil']" routerLinkActive='active'>Perfil</a>
+        
     </mat-toolbar>
 </div>

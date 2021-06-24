@@ -18,7 +18,8 @@ export class LogeandoComponent implements OnInit {
   validar(){
     for(var i=0; i<this.usuarios.length; i++){
       if(this.usuarios[i].name==this.value){
-        this.router.navigate(['/servicios']);
+        console.log(this.usuarios[i].name)
+        this.router.navigate(['usuario', this.usuarios[i].id, 'servicios']);
       }
     }
     if(this.usuarios?.find(u => u.name == this.value)===undefined)window.alert('usuario no identificado');
