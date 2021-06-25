@@ -28,7 +28,7 @@ export class AnfitrionComponent implements OnInit {
   }
 
   getUsuario(): void {
-    this.controllerService.getAnfitrionById(this.usuarioId)
+    this.controllerService.getUsuarioById(this.usuarioId)
     .subscribe((result:any) => this.usuario = result.data );
   }
 
