@@ -5,7 +5,6 @@ import { Review } from 'src/app/model/review';
 import { Servicio } from 'src/app/model/Servicio';
 import { Usuario } from 'src/app/model/Usuario';
 import { ControllerService } from 'src/app/services/controller.service';
-import { ServicioService } from 'src/app/services/servicio.service';
 
 @Component({
   selector: 'app-detalle-servicio',
@@ -22,7 +21,6 @@ export class DetalleServicioComponent implements OnInit {
   public reviews ?: Review[];
 
   constructor(
-    private servicioService: ServicioService,
     private route:ActivatedRoute,
     private router: Router,
     private controllerService: ControllerService
@@ -37,7 +35,7 @@ export class DetalleServicioComponent implements OnInit {
   }
 
   getServicio(): void{
-    this.servicioService.getServicio(this.idServicio).subscribe(
+    this.controllerService.getServicio(this.idServicio).subscribe(
       (result: any) => {
         this.servicio = result.data
       }

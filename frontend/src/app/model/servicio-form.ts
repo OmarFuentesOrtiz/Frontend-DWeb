@@ -4,6 +4,7 @@ export class ServicioForm {
     init_valid_date: string
     modalidad_id: number
     name: string
+    img: string
     plataforma_id: number
     price: number
     region_id: number

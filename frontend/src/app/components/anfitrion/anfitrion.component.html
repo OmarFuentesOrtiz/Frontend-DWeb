@@ -16,7 +16,7 @@
                     <mat-card-header>
                         <mat-card-title> {{anfitrion.name}} </mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image class="imageCard" src="https://e.rpp-noticias.io/xlarge/2018/12/31/145514_733004.png" alt="imagen del lugar">
+                    <img mat-card-image class="imageCard" [src]="anfitrion.img" alt="imagen del lugar">
                     <mat-card-content>
                         <p> {{anfitrion.name}} </p>
                         <p> {{anfitrion.nickname}} </p>

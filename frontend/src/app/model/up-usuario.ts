@@ -3,4 +3,5 @@ export class UpUsuario {
     id: number
     nickname: string
     rol_id: number
+    img: string
 }

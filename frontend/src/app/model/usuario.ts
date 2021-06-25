@@ -1,6 +1,7 @@
 export class Usuario{
     id: number
     name: string
+    img: string
     nickname: string
     email: string
     birth_day: string

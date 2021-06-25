@@ -1,9 +1,10 @@
 export class Servicio{
         id: number
-        modalidad: string
-        region: string
-        plataforma: string
-        usuario: string
+        img: string
+        modalidad_name: string
+        region_name: string
+        plataforma_name: string
+        usuario_name: string
         name: string
         init_valid_date: string
         end_valid_date: string

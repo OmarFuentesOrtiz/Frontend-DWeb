@@ -46,9 +46,10 @@ export class PerfilComponent implements OnInit {
 
     this.controllerService.saveUsuario(this.save_model)
         .subscribe({
-            next: data => {
-                this.usuario = data.usuario;
-            },
+            //next: result => {
+            //    this.usuario = result.data;
+            //},
+
             error: error => {
                 // this.errorMessage = error.message;
                 console.error('There was an error!', error);

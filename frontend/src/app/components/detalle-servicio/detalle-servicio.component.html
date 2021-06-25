@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-sm-12 col-md-6 pTop50">
             <mat-card>
-                <img src="https://e.rpp-noticias.io/xlarge/2018/12/31/145514_733004.png"/>
+                <img [src]="servicio.img"/>
                 <h1> {{servicio.name | uppercase }} </h1>
-                <p> {{servicio.region}} </p>
-                <p> {{servicio.plataforma}} </p>
+                <p> {{servicio.region_name}} </p>
+                <p> {{servicio.plataforma_name}} </p>
             </mat-card>
         </div>
     </div>

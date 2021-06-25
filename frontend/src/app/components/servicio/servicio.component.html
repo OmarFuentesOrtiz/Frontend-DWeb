@@ -28,11 +28,11 @@
                     <mat-card-header>
                         <mat-card-title> {{servicio.name}} </mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image class="imageCard" src="https://e.rpp-noticias.io/xlarge/2018/12/31/145514_733004.png" alt="imagen del lugar">
+                    <img mat-card-image class="imageCard" [src]="servicio.img" alt="imagen del lugar">
                     <mat-card-content>
-                        <p> {{servicio.region}} </p>
-                        <p> {{servicio.modalidad}} </p>
-                        <p> {{servicio.plataforma}} </p>
+                        <p> {{servicio.region_name}} </p>
+                        <p> {{servicio.modalidad_name}} </p>
+                        <p> {{servicio.plataforma_name}} </p>
                     </mat-card-content>
                     <mat-card-actions>
                         <button mat-button [routerLink]="['/usuario', usuario.id, 'detalleServicio', servicio.id]" >Detalles</button>

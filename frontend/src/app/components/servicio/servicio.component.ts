@@ -5,7 +5,6 @@ import { Servicio } from 'src/app/model/Servicio';
 import { TwoValModel } from 'src/app/model/two-val-model';
 import { Usuario } from 'src/app/model/Usuario';
 import { ControllerService } from 'src/app/services/controller.service';
-import { ServicioService } from 'src/app/services/servicio.service';
 
 @Component({
   selector: 'app-servicio',
@@ -27,8 +26,7 @@ export class ServicioComponent implements OnInit {
   selectedPlataforma = '';
   selectedRegion = '';
 
-  constructor(private servicioService: ServicioService, 
-    private controllerService: ControllerService,
+  constructor(private controllerService: ControllerService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -44,12 +42,12 @@ export class ServicioComponent implements OnInit {
     .subscribe((result:any) => this.usuario = result.data );
   }
   getAllServicios(): void {
-    this.servicioService.getAllServicios()
-    .subscribe((result: any) => 
-    {
+    let request = this.controllerService.getAllServicios();
+
+    request.subscribe((result: any) => {
       this.servicios = result.data
-      console.log(result.data)
-    })
+      console.log(result)
+    });
   }
   
   serviciostarts(servicio: Servicio):boolean {

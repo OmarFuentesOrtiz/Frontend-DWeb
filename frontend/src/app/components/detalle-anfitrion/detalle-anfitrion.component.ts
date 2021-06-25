@@ -5,7 +5,6 @@ import { Anfitrion } from 'src/app/model/anfitrion';
 import { Servicio } from 'src/app/model/Servicio';
 import { Usuario } from 'src/app/model/Usuario';
 import { ControllerService } from 'src/app/services/controller.service';
-import { ServicioService } from 'src/app/services/servicio.service';
 
 @Component({
   selector: 'app-detalle-anfitrion',
@@ -22,7 +21,6 @@ export class DetalleAnfitrionComponent implements OnInit {
   public servicios: Servicio[];
 
   constructor(
-    private servicioService: ServicioService,
     private route:ActivatedRoute,
     private router: Router,
     private controllerService: ControllerService
