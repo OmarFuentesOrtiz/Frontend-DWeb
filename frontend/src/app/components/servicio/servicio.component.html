@@ -20,6 +20,49 @@
       </div> -->
 </div>
 
+
+<div class="container">
+    <div class="form-group">
+      <label for="modalidad">Seleccione la modalidad</label>
+      <select class="form-control" id="modalidad"
+              required
+              [(ngModel)]="selectedModalidad" name="modalidad.id"
+              #power="ngModel">
+        <option *ngFor="let pow of modalidades" [value]="pow.name ">{{pow.name}}</option>
+      </select>
+      <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+        Power is required
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="plataforma">Seleccione la plataforma</label>
+        <select class="form-control" id="plataforma"
+                required
+                [(ngModel)]="selectedPlataforma" 
+                #power="ngModel">
+          <option *ngFor="let pow of plataformas" [value]="pow.name">{{pow.name}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="plataforma">Seleccione la region</label>
+        <select class="form-control" id="plataforma"
+                required
+                [(ngModel)]="selectedRegion" 
+                #power="ngModel">
+          <option *ngFor="let pow of regiones" [value]="pow.name ">{{pow.name}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+</div>
+
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-4" *ngFor="let servicio of this.servicios">
