@@ -18,6 +18,8 @@ export class AnfitrionComponent implements OnInit {
   anfitriones: Anfitrion[];
   value = '';
 
+  default_img = "https://www.alphacoatingtech.com/wp-content/uploads/2017/03/epoxy-gray.jpg";
+
   constructor(private controllerService:ControllerService,
     private route: ActivatedRoute) { }
 
@@ -51,11 +53,14 @@ export class AnfitrionComponent implements OnInit {
     else{
       return false;
     }
-
-    
-
   }
 
-
-
+  getImg(img: any){
+    if(img == null){
+      return this.default_img;
+    }
+    else{
+      return img;
+    }
+  }  
 }

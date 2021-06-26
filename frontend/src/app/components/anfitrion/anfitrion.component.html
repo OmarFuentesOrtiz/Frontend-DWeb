@@ -9,14 +9,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="column-4" *ngFor="let anfitrion of this.anfitriones">
+        <div class="col-md-4" *ngFor="let anfitrion of this.anfitriones">
+            
             <div *ngIf="Anfitrionstarts(anfitrion.name)">
             
                 <mat-card class="card-theme">
                     <mat-card-header>
                         <mat-card-title> {{anfitrion.name}} </mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image class="imageCard" [src]="anfitrion.img" alt="imagen del lugar">
+                    <img mat-card-image class="imageCard" [src]="getImg(anfitrion.img)" alt="imagen del lugar">
                     <mat-card-content>
                         <p> {{anfitrion.name}} </p>
                         <p> {{anfitrion.nickname}} </p>
@@ -25,6 +26,7 @@
                         <button mat-button [routerLink]="['/usuario', usuarioId, 'detalleAnfitrion', anfitrion.id]" >Detalles</button>
                     </mat-card-actions>
                 </mat-card>
+                <br>
             </div>
         </div>
     </div>

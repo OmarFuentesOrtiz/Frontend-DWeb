@@ -19,6 +19,8 @@ export class DetalleAnfitrionComponent implements OnInit {
   public usuarioId: number;
 
   public servicios: Servicio[];
+  default_img = "https://www.alphacoatingtech.com/wp-content/uploads/2017/03/epoxy-gray.jpg";
+
 
   constructor(
     private route:ActivatedRoute,
@@ -47,6 +49,15 @@ export class DetalleAnfitrionComponent implements OnInit {
         this.servicios = result.data
       }
     )
+  }
+
+  getImg(img: any){
+    if(img == null){
+      return this.default_img;
+    }
+    else{
+      return img;
+    }
   }
 
 }

@@ -18,6 +18,8 @@ export class PerfilComponent implements OnInit {
   roles?: TwoValModel[];
   save_model = new UpUsuario();
 
+  default_img:string = "https://www.alphacoatingtech.com/wp-content/uploads/2017/03/epoxy-gray.jpg";
+
   constructor(private controllerService: ControllerService, 
     private route: ActivatedRoute) { }
 
@@ -42,7 +44,13 @@ export class PerfilComponent implements OnInit {
   submit() {
     this.save_model.email = this.usuario.email;
     this.save_model.nickname = this.usuario.nickname.replace(/@/g, '');
-    this.save_model.rol_id = 2;
+    this.save_model.img = this.usuario.img;
+    if(this.usuario.rol_name="Anfitrión"){
+      this.save_model.rol_id = 2;
+    }
+    else{
+      this.save_model.rol_id = 1;
+    }
 
     this.controllerService.saveUsuario(this.save_model)
         .subscribe({
@@ -69,4 +77,12 @@ export class PerfilComponent implements OnInit {
     this.model = new Usuario();
   }
 
+  getImg(img: string): string{
+    if(img == null){
+      return this.default_img;
+    }
+    else{
+      return img;
+    }
+  }
 }

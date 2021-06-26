@@ -6,6 +6,20 @@
         <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
             <h1>{{ usuario.name }}</h1>
 
+            <img [src] = "getImg(usuario.img)">
+
+            <div class="form-group">
+                <label for="img">Imagen</label>
+                <input type="text" class="form-control" id="img"
+                       required
+                       [(ngModel)]="usuario.img" name="img"
+                       #name="ngModel">
+                <div [hidden]="name.valid || name.pristine"
+                     class="alert alert-danger">
+                    Img is required
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" class="form-control" id="email"
@@ -36,8 +50,8 @@
             </div>
 
 
-            <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-            <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+            <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid" >Submit</button>
+            <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">Limpiar datos</button>
         </form>
     </div>
 
