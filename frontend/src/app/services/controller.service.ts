@@ -8,6 +8,7 @@ import { Anfitrion } from '../model/anfitrion';
 import { Usuario } from '../model/Usuario';
 import { Servicio } from '../model/Servicio';
 import { Review } from '../model/review';
+import {UsuarioForm} from "../model/usuario-form";
 
 @Injectable({
   providedIn: 'root'
@@ -86,6 +87,13 @@ export class ControllerService {
       catchError(this.handleError<UpUsuario>('Save Usuario',))
     );
   }
+  postUsuario(body: UsuarioForm): Observable<{}>{
+    return this.http.post<any>(this.API+'usuarios', body)
+        .pipe(
+            tap(_=>window.alert('Usuario registrado satifactoriamente.')),
+            catchError(this.handleError<any>('Registrar Usuario',))
+        );
+  }
 
   postServicio(body: ServicioForm): Observable<{}> {
     return this.http.post<ServicioForm>(`${this.API}servicios`, body)
@@ -111,7 +119,7 @@ export class ControllerService {
 
   private handleError<T>(operation = 'operation', result?:T){
     return(error:any): Observable<T> => {
-      window.alert(`Operacion ${operation} failed`); //senf the error to logging infraestructure
+      window.alert(`Operacion ${operation} fallida`); //senf the error to logging infraestructure
       return of(result as T);
     };
   }

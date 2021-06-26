@@ -13,6 +13,7 @@ import { ReviewFormComponent } from './review-form/review-form.component';
 import { LogeandoComponent } from './logeando/logeando.component';
 import { DetalleServicioComponent } from './detalle-servicio/detalle-servicio.component';
 import { DetalleAnfitrionComponent } from './detalle-anfitrion/detalle-anfitrion.component';
+import {RegistrarComponent} from "./registrar/registrar.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetalleAnfitrionComponent } from './detalle-anfitrion/detalle-anfitrion
     ReviewFormComponent,
     LogeandoComponent,
     DetalleServicioComponent,
-    DetalleAnfitrionComponent
+    DetalleAnfitrionComponent,
+    RegistrarComponent,
   ],
   imports: [
     CommonModule,

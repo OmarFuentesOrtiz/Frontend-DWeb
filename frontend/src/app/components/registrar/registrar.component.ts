@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Usuario} from "../../model/Usuario";
+import {ControllerService} from "../../services/controller.service";
+import {UsuarioForm} from "../../model/usuario-form";
 
 @Component({
   selector: 'app-registrar',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarComponent implements OnInit {
 
-  constructor() { }
+  value='';
+  model = new UsuarioForm();
+  usuario:Usuario;
+  answer:string;
+
+  constructor(private controllerService:ControllerService) { }
 
   ngOnInit(): void {
   }
 
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+    this.controllerService.postUsuario(this.model)
+        .subscribe((result:any)=> this.usuario = result.data)
+  }
 }
