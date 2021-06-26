@@ -66,7 +66,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4" *ngFor="let servicio of this.servicios">
-            <div *ngIf="serviciostarts(servicio)">
+            <div *ngIf="serviciostarts(servicio) && servicioplataforma(servicio) && serviciomodalidad(servicio) 
+            && servicioregion(servicio) ">
                 <mat-card class="card-theme">
                     <mat-card-header>
                         <mat-card-title> {{servicio.name}} </mat-card-title>

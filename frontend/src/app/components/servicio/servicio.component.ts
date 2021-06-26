@@ -63,8 +63,6 @@ export class ServicioComponent implements OnInit {
 
   
   serviciostarts(servicio: Servicio):boolean {
-    console.log(this.selectedModalidad)
-    console.log(this.selectedPlataforma)
 
     let resultado = false;
 
@@ -75,6 +73,30 @@ export class ServicioComponent implements OnInit {
     return resultado;
   }
 
+  servicioplataforma(servicio:Servicio):boolean {
+    let resultado =false;
+    if(servicio.plataforma_name.startsWith(this.selectedPlataforma)) resultado =true;
+    else resultado = false;
+    if(this.selectedPlataforma == "") resultado = true;
+
+    return resultado;
+  }
+  serviciomodalidad(servicio:Servicio):boolean {
+    let resultado =false;
+    if(servicio.modalidad_name.startsWith(this.selectedModalidad)) resultado =true;
+    else resultado = false;
+    if(this.selectedModalidad == "") resultado = true;
+
+    return resultado;
+  }
+  servicioregion(servicio:Servicio):boolean {
+    let resultado =false;
+    if(servicio.region_name.startsWith(this.selectedRegion)) resultado =true;
+    else resultado = false;
+    if(this.selectedRegion == "") resultado = true;
+
+    return resultado;
+  }
   modalidades?: TwoValModel[];
   getAllModalidades():void {
     this.controllerService.getAllModalidades()
