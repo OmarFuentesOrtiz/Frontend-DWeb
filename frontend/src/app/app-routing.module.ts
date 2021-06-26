@@ -21,7 +21,6 @@ const routes: Routes = [
   { path: ':id/servicioForm', component: ServicioFormComponent},
   { path: 'pagoForm', component: PagoFormComponent},
   { path: ':id/perfil', component: PerfilComponent},
-  { path: 'pagoForm', component: PagoFormComponent},
   
 ];
 

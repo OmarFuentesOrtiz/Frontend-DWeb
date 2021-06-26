@@ -22,13 +22,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="column-4" *ngFor="let servicio of this.servicios">
+        <div class="col-md-4" *ngFor="let servicio of this.servicios">
             <div *ngIf="serviciostarts(servicio)">
                 <mat-card class="card-theme">
                     <mat-card-header>
                         <mat-card-title> {{servicio.name}} </mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image class="imageCard" [src]="servicio.img" alt="imagen del lugar">
+                    <img mat-card-image class="imageCard" [src]="getImg(servicio.img)" alt="imagen del lugar">
                     <mat-card-content>
                         <p> {{servicio.region_name}} </p>
                         <p> {{servicio.modalidad_name}} </p>
@@ -42,8 +42,3 @@
         </div>
     </div>
 </div>
-
-
-
-    
-      

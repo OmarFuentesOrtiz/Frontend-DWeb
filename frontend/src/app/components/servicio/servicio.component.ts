@@ -22,6 +22,8 @@ export class ServicioComponent implements OnInit {
   selectedServicio ?: Servicio;
   tag = '';
 
+  default_img = "https://www.alphacoatingtech.com/wp-content/uploads/2017/03/epoxy-gray.jpg";
+
   selectedModalidad = '';
   selectedPlataforma = '';
   selectedRegion = '';
@@ -49,6 +51,16 @@ export class ServicioComponent implements OnInit {
       console.log(result)
     });
   }
+
+  getImg(img: any){
+    if(img == null){
+      return this.default_img;
+    }
+    else{
+      return img;
+    }
+  }
+
   
   serviciostarts(servicio: Servicio):boolean {
     console.log(this.selectedModalidad)
