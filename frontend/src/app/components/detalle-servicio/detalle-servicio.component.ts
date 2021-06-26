@@ -27,6 +27,7 @@ export class DetalleServicioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.controllerService.getReviews().subscribe((result:any)=>{this.reviews=result.data});
     this.idServicio = Number(this.route.snapshot.paramMap.get('sid'));
     this.idUsuario = Number(this.route.snapshot.paramMap.get('id'));
     this.getServicio();
