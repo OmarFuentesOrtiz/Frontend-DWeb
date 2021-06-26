@@ -12,10 +12,7 @@
         </div>
     </div>
  
-    <h2>Reviews</h2>
-    <div *ngFor="let r of reviews">
-    <p>Este es un review</p>
-    </div>
+
     <!--
     <div class="container">
         <h2>Reviews</h2>
@@ -28,7 +25,7 @@
         </div>
     </div>
     -->
-    
+    <br>
 
     <div class="col-sm-12 col-md-6 pTop50">
             <mat-card>
@@ -50,6 +47,12 @@
     </div>
     <br>
     <div>
+        <h2>Comentarios: </h2>
+        <div *ngFor="let r of reviews">
+        <mat-card-content>
+            <p>{{r.description}}</p>
+        </mat-card-content>
+        </div>
         <app-review-form></app-review-form>
     </div>
     <br>
