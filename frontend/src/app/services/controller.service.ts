@@ -78,7 +78,8 @@ export class ControllerService {
   saveUsuario(body: UpUsuario): Observable<{}>{
     return this.http.put<UpUsuario>(this.API+'usuarios', body)
     .pipe(
-      catchError(this.handleError<UpUsuario>('Update Usuario',))
+      tap(_=>window.alert('Usuario guardado satifactoriamente.')),
+      catchError(this.handleError<UpUsuario>('Save Usuario',))
     );
   }
 
