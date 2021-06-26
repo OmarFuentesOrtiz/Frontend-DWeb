@@ -49,9 +49,11 @@
     <div>
         <h2>Comentarios: </h2>
         <div *ngFor="let r of reviews">
-        <mat-card-content>
-            <p>{{r.description}}</p>
-        </mat-card-content>
+            <div *ngIf= "r.servicio_id == servicio.id">
+            
+                    <p>{{r.description}}</p>
+                
+            </div>
         </div>
         <app-review-form></app-review-form>
     </div>

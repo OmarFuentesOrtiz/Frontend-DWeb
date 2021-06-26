@@ -18,7 +18,7 @@ export class DetalleServicioComponent implements OnInit {
   public usuario: Usuario = new Usuario();
   private idServicio: number;
   private idUsuario: number;
-  public reviews ?: Review[];
+  public reviews: Review[];
 
   constructor(
     private route:ActivatedRoute,
@@ -31,8 +31,8 @@ export class DetalleServicioComponent implements OnInit {
     this.idServicio = Number(this.route.snapshot.paramMap.get('sid'));
     this.idUsuario = Number(this.route.snapshot.paramMap.get('id'));
     this.getServicio();
-    this.getUsuario();
     this.getReviews();
+    this.getUsuario();
   }
 
   getServicio(): void{
@@ -58,7 +58,7 @@ export class DetalleServicioComponent implements OnInit {
         console.log('Reviews  ', this.reviews)
     //    this.reviews.filter(x => x.servicio_id == this.servicio.id)
       }
-    )
+    );
   }
 
   createReserva() {

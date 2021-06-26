@@ -7,6 +7,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Anfitrion } from '../model/anfitrion';
 import { Usuario } from '../model/Usuario';
 import { Servicio } from '../model/Servicio';
+import { Review } from '../model/review';
 
 @Injectable({
   providedIn: 'root'
@@ -51,8 +52,11 @@ export class ControllerService {
   getUsuarioById(id: number){
     return this.http.get(this.API+'usuarios' + '/' + id)
   }
-  getReviews() {
-    return this.http.get(this.API + 'reviews')
+  getReviews(): Observable<Review[]> {
+    return this.http.get<Review[]>(this.API + 'reviews')
+    .pipe(
+      catchError(this.handleError<Review[]>('Get reviews',))
+    );
   }
 
   getAnfitriones(): Observable<Anfitrion[]> {
