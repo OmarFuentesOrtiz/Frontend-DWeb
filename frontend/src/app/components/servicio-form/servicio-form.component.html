@@ -1,61 +1,39 @@
 <app-header  [usuarioId] = "anfitrion.id"></app-header>
-<h2>Crea aqui tu servicio</h2>
-<p>Este es tu formulario</p>
-
-<p> {{anfitrion.name}} es hora de crear un servicio </p>
 
 <div class="container">
   <div [hidden]="submitted">
-    <h1>Hero Form</h1>
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <h2> Hola {{anfitrion.name}}, crea tu nuevo servicio</h2>
 
       <div class="form-group">
-        <label for="usuario">Usuario</label>
+        <label for="usuario">Imagen (Opcional)</label>
         <input type="text" class="form-control" id="usuario"
                required
-               [(ngModel)]="model.usuario_id" name="usuario"
+               [(ngModel)]="model.img" name="usuario"
                #name="ngModel">
-        <div [hidden]="name.valid || name.pristine"
-             class="alert alert-danger">
-          User log is required
-        </div>
       </div>
 
       <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name">Nombre del servicio</label>
         <input type="text" class="form-control" id="name"
                required
                [(ngModel)]="model.name" name="name"
                #name="ngModel">
         <div [hidden]="name.valid || name.pristine"
              class="alert alert-danger">
-          Name is required
+          *El nombre del servicio es obligatorio
         </div>
       </div>
-
-<!--      <div class="form-group">-->
-<!--        <label for="usuario">Usuario</label>-->
-<!--        <input type="text" class="form-control" id="usuario"-->
-<!--               required-->
-<!--               [(ngModel)]="model.usuario" name="usuario"-->
-<!--               #name="ngModel">-->
-<!--        <div [hidden]="name.valid || name.pristine"-->
-<!--             class="alert alert-danger">-->
-<!--          User log is required-->
-<!--        </div>-->
-<!--      </div>-->
 
       <div class="form-group">
         <label for="description">Descripción de su servicio</label>
         <input type="text" class="form-control" id="description"
                [(ngModel)]="model.description" name="description">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          *La descripción es obligatoria
+        </div>
       </div>
-
-<!--      <div class="form-group">-->
-<!--        <label for="alterEgo">Alter Ego</label>-->
-<!--        <input type="text" class="form-control" id="alterEgo"-->
-<!--               [(ngModel)]="model.alterEgo" name="alterEgo">-->
-<!--      </div>-->
 
       <div class="form-group">
         <label for="modalidad">Seleccione la modalidad</label>
@@ -66,7 +44,7 @@
           <option *ngFor="let pow of modalidades" [value]="pow.id ">{{pow.name}}</option>
         </select>
         <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Power is required
+          *Se requiere asignar una modalidad
         </div>
       </div>
 
@@ -79,12 +57,12 @@
           <option *ngFor="let pow of plataformas" [value]="pow.id">{{pow.name}}</option>
         </select>
         <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Power is required
+          *Se requiere asignar una plataforma
         </div>
       </div>
 
       <div class="form-group">
-        <label for="region.id">Seleccione su region</label>
+        <label for="region.id">Seleccione su región</label>
         <select class="form-control" id="region.id"
                 required
                 [(ngModel)]="model.region_id" name="region.id"
@@ -92,7 +70,7 @@
           <option *ngFor="let pow of regiones" [value]="pow.id">{{pow.name}}</option>
         </select>
         <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Power is required
+          *Se requiere asignar una región
         </div>
       </div>
 
@@ -100,39 +78,39 @@
         <label for="precio">Precio de su servicio</label>
         <input type="text" class="form-control" id="precio"
                [(ngModel)]="model.price" name="precio">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          *Se requiere asignar un precio mayor a 1.0 unidades
+        </div>
       </div>
 
       <div class="form-group">
         <label for="init_date">¿Desde cuando será vigente su servicio?</label>
         <input type="date" class="form-control" id="init_date"
                [(ngModel)]="model.init_valid_date" name="init_date">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          *La fecha de inicio debe ser como mínimo un día mayor a la actual
+        </div>
       </div>
       <div class="form-group">
         <label for="end_date">¿Hasta cuando será vigente su servicio?</label>
         <input type="date" class="form-control" id="end_date"
                [(ngModel)]="model.end_valid_date" name="end_date">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          *La fecha de termino tiene que se un día mayor que la fecha de incio
+        </div>
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Registrar el nuevo servicio</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">Limpiar el formulario</button>
     </form>
   </div>
 
   <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model.name }}</div>
-    </div>
-<!--    <div class="row">-->
-<!--      <div class="col-xs-3">Alter Ego</div>-->
-<!--      <div class="col-xs-9">{{ model.alterEgo }}</div>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--      <div class="col-xs-3">Power</div>-->
-<!--      <div class="col-xs-9">{{ model.power }}</div>-->
-<!--    </div>-->
+    <h2>Espere un momento...</h2>
     <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+    <button class="btn btn-primary" (click)="submitted=false">Editar</button>
   </div>
 </div>

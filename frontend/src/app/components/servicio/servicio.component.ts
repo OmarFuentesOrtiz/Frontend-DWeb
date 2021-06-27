@@ -44,7 +44,7 @@ export class ServicioComponent implements OnInit {
     .subscribe((result:any) => this.usuario = result.data );
   }
   getAllServicios(): void {
-    let request = this.controllerService.getAllServicios();
+    let request = this.controllerService.getAllServiciosClient(this.usuarioId);
 
     request.subscribe((result: any) => {
       this.servicios = result.data

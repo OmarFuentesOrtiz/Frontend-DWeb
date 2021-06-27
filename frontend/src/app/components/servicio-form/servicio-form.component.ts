@@ -51,6 +51,7 @@ export class ServicioFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.model.usuario_id = this.anfitrion.id;
     this.controllerService.postServicio(this.model)
         .subscribe((result:any)=> this.model = result.data)
   }

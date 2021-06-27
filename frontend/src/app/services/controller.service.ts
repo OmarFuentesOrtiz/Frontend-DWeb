@@ -109,6 +109,12 @@ export class ControllerService {
       catchError(this.handleError<Servicio[]>('getServicios []',))
     );
   }
+  getAllServiciosClient(usuario_id:number): Observable<Servicio[]> {
+    return this.http.get<Servicio[]>(`${this.API}servicios/client/${usuario_id}`)
+        .pipe(
+            catchError(this.handleError<Servicio[]>('getServicios []',))
+        );
+  }
 
   getServicio(id: number): Observable<Servicio>{
     return this.http.get<Servicio>(`${this.API}servicios/${id}`)
