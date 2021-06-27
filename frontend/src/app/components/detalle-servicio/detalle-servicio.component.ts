@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Review } from 'src/app/model/review';
-import { Servicio } from 'src/app/model/Servicio';
+import { Servicio } from 'src/app/model/servicio';
 import { Usuario } from 'src/app/model/Usuario';
 import { ControllerService } from 'src/app/services/controller.service';
 
