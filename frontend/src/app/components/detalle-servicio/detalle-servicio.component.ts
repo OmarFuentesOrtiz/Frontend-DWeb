@@ -15,35 +15,38 @@ export class DetalleServicioComponent implements OnInit {
 
   public reservaForm: FormGroup;
   public servicio: Servicio = new Servicio();
-  public usuario: Usuario = new Usuario();
-  private idServicio: number;
-  private idUsuario: number;
+  // public usuario: Usuario = new Usuario();
+  private servicioId: number;
   public reviews: Review[];
+
+  usuario: Usuario;
+  usuarioId: number;
+
+  default_img = "https://www.alphacoatingtech.com/wp-content/uploads/2017/03/epoxy-gray.jpg";
 
   constructor(
     private route:ActivatedRoute,
     private router: Router,
     private controllerService: ControllerService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.controllerService.getReviews().subscribe((result:any)=>{this.reviews=result.data});
-    this.idServicio = Number(this.route.snapshot.paramMap.get('sid'));
-    this.idUsuario = Number(this.route.snapshot.paramMap.get('id'));
+    this.usuarioId = Number(this.route.snapshot.paramMap.get('id'));
+    this.getUsuario();
+    this.servicioId = Number(this.route.snapshot.paramMap.get('sid'));
     this.getServicio();
     this.getReviews();
-    this.getUsuario();
   }
 
   getServicio(): void{
-    this.controllerService.getServicio(this.idServicio).subscribe(
+    this.controllerService.getServicio(this.servicioId).subscribe(
       (result: any) => {
         this.servicio = result.data
       }
     )
   }
   getUsuario(): void{
-    this.controllerService.getUsuarioById(this.idUsuario).subscribe(
+    this.controllerService.getUsuarioById(this.usuarioId).subscribe(
       (result: any) => {
         this.usuario = result.data
       }
@@ -53,15 +56,20 @@ export class DetalleServicioComponent implements OnInit {
   getReviews(): void{
     this.controllerService.getReviews().subscribe(
       (result: any) => {
-        console.log('Reviews ', result)
+        console.log("no pos", result)
         this.reviews = result.data
-        console.log('Reviews  ', this.reviews)
-    //    this.reviews.filter(x => x.servicio_id == this.servicio.id)
       }
     );
+    console.log("idk", this.reviews);
   }
 
-  createReserva() {
-    true;
+  getImg(img: any){
+    if(img == null){
+      return this.default_img;
+    }
+    else{
+      return img;
+    }
   }
+
 }

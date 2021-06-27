@@ -2,14 +2,22 @@
 
 <div>
     <mat-toolbar color="primary">
-        <ng-container *ngIf = "lblServicio == true">
-            <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario?.id, 'servicios']" routerLinkActive='active'>Servicios</a>
+<!--        <a *ngIf = "lbl[0]==true" mat-button class="btn btn-danger" [routerLink]= "['/', usuario?.id, 'servicioForm']" routerLinkActive='active'>Añadir un servicio</a>-->
+<!--        <ng-container *ngIf = "lbl[1]==true">-->
+<!--            <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario?.id, 'servicios']" routerLinkActive='active'>Servicios</a>-->
+<!--        </ng-container>-->
+<!--        <ng-container *ngIf = "lbl[2]==true">-->
+<!--            <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario?.id, 'anfitrion']" routerLinkActive='active'>Anfitriones</a>-->
+<!--        </ng-container>-->
+<!--        <a *ngIf = "lbl[3]==true" mat-button class="btn btn-danger" [routerLink]= "['/', usuario?.id, 'perfil']" routerLinkActive='active'>Perfil</a>-->
+        <a *ngIf = "lbl[0]==true" mat-button class="btn btn-danger" [routerLink]= "['/', usuario_header_id, 'servicioForm']" routerLinkActive='active'>Añadir un servicio</a>
+        <ng-container *ngIf = "lbl[1]==true">
+            <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario_header_id, 'servicios']" routerLinkActive='active'>Servicios</a>
         </ng-container>
-        <ng-container *ngIf = "lblAnfitrion == true">
-            <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario?.id, 'anfitrion']" routerLinkActive='active'>Anfitriones</a>
+        <ng-container *ngIf = "lbl[2]==true">
+            <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario_header_id, 'anfitrion']" routerLinkActive='active'>Anfitriones</a>
         </ng-container>
-        <a  *ngIf = "usuario?.rol_name=='Anfitrión'" mat-button class="btn btn-danger" [routerLink]= "['/', usuario.id, 'servicioForm']" routerLinkActive='active'>Añadir un servicio</a>
-        <a mat-button class="btn btn-danger" [routerLink]= "['/', usuario?.id, 'perfil']" routerLinkActive='active'>Perfil</a>
-        
+        <a *ngIf = "lbl[3]==true" mat-button class="btn btn-danger" [routerLink]= "['/', usuario_header_id, 'perfil']" routerLinkActive='active'>Perfil</a>
+
     </mat-toolbar>
 </div>

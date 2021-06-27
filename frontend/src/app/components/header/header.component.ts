@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { Usuario } from 'src/app/model/Usuario';
 import { ControllerService } from 'src/app/services/controller.service';
 
@@ -10,42 +10,40 @@ import { ControllerService } from 'src/app/services/controller.service';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() usuarioId: number;
-  usuario: Usuario;
+  @Input() usuario_header_id: number;
+  @Input() usuario_header_rol: string;
 
-  lblServicio: boolean = false;
-  lblAnfitrion: boolean = false;
+  // AddNewService | Servicio | Anfitrion | Perfil
+  lbl: boolean[] = [false, true, false, true];
 
-  constructor(private router: Router, 
-    private controllerService: ControllerService) {
+  constructor(private router: Router) {
     console.log(this.router.url);
   }
 
   ngOnInit(): void {
-
-    this.getUsuario();
-
-    if(this.getCurrentRoute() == ('/usuario/' + this.usuarioId + '/servicios')){
-      this.lblAnfitrion = true;
-    }
-    else if (this.getCurrentRoute() == ('/usuario/' + this.usuarioId + '/anfitrion')){
-      this.lblServicio = true;
-    }
-    else if(this.getCurrentRoute() == ('/' + this.usuarioId + '/servicioForm') ||
-            this.getCurrentRoute() == ('/' + this.usuarioId + '/perfil'))
-    {
-      this.lblAnfitrion = true;
-      this.lblServicio = true;
-    }
-  }
-
-  getUsuario(): void {
-    this.controllerService.getUsuarioById(this.usuarioId)
-    .subscribe((result: any) => this.usuario = result.data)
+    this.activateBtn(this.getCurrentRoute());
   }
 
   getCurrentRoute():string {
     return this.router.url;
+  }
+
+  activateBtn(x:string) {
+    console.log(this.usuario_header_id, this.usuario_header_rol)
+    console.log("Esta es mi ruta: "+x);
+    if (this.usuario_header_rol=="Anfitrión") { this.lbl[0] = true; }
+    switch (x) {
+      case ('/usuario/' + this.usuario_header_id + '/servicios'):
+        this.lbl[1] = false; this.lbl[2] = true; break;
+      // case ('/usuario/' + this.usuario_header_id + '/anfitrion'):
+      //     this.lbl[1] = true; break;
+      case ('/' + this.usuario_header_id + '/servicioForm'):
+        this.lbl[0] = true; this.lbl[1] = true; break;
+      case ('/' + this.usuario_header_id + '/perfil'):
+        this.lbl[3] = false; break;
+      // default:
+      //   this.lbl[0] = true; this.lbl[1] = true; break;
+    }
   }
 
 }

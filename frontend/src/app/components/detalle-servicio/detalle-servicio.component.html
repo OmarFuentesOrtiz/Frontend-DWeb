@@ -1,17 +1,26 @@
-<app-header [usuarioId] = "usuario.id"></app-header>
+<app-header [usuario_header_id]="usuario.id" [usuario_header_rol]="usuario.rol_name"></app-header>
 
-<div class="container" *ngIf="servicio">
+<div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-6 pTop50">
             <mat-card>
-                <img [src]="servicio.img"/>
-                <h1> {{servicio.name | uppercase }} </h1>
-                <p> {{servicio.region_name}} </p>
-                <p> {{servicio.plataforma_name}} </p>
+                <h1> {{servicio.name | uppercase }}<span>
+                    por <button disabled mat-button [routerLink]="['/pagoForm']" class="btn btn-dark">{{servicio.usuario_name | uppercase}}</button>
+                </span></h1>
+                <img mat-card-image class="imageCard" [src]="getImg(servicio.img)" alt="imagen del lugar">
+                <mat-card-content>
+                    <p> > {{ servicio.description }}</p>
+                </mat-card-content>
+                <p> Tags: {{servicio.region_name}} || {{servicio.modalidad_name}} || {{servicio.plataforma_name}} </p>
+                <p> Valido desde: {{servicio.init_valid_date | date }}
+                    <br >Hasta: {{servicio.end_valid_date | date }} </p>
+                <h1> Precio: {{servicio.price | currency }} </h1>
+                <mat-card-actions>
+                    <button mat-button [routerLink]="['/pagoForm']" class="btn btn-dark">Comprar este servicio</button>
+                </mat-card-actions>
             </mat-card>
         </div>
     </div>
- 
 
     <!--
     <div class="container">
@@ -27,32 +36,21 @@
     -->
     <br>
 
-    <div class="col-sm-12 col-md-6 pTop50">
-            <mat-card>
-                <form class="booking-form" [formGroup]="reservaForm" (ngSubmit)="createReserva()">
-                    <h1>Realiza tu reserva del Servicio</h1>
-                    <div>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Anfitrion</mat-label>
-                            <input type="text" formControlName="customers" matInput>
-                        </mat-form-field>
-                    </div>
-                    <Button variant="contained" color="primary" routerLink="/pagoForm">
-                        pagar
-                      </Button>
-                    <div>
-                    </div>
-                </form>    
-            </mat-card>
-    </div>
     <br>
+
+</div>
+
+
+<div class="container" *ngIf="servicio">
+
+
     <div>
         <h2>Comentarios: </h2>
         <div *ngFor="let r of reviews">
             <div *ngIf= "r.servicio_id == servicio.id">
-            
+
                     <p>{{r.description}}</p>
-                
+
             </div>
         </div>
         <app-review-form></app-review-form>
