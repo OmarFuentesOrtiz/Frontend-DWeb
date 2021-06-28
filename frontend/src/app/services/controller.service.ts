@@ -123,11 +123,19 @@ export class ControllerService {
       );
   }
 
+  switchLanguage(usuarioid: number): Observable<Usuario>{
+    console.log(`${this.API}usuarios/${usuarioid}/language`, null);
+    return this.http.put<Usuario>(`${this.API}usuarios/${usuarioid}/language`, null);
+  }
+
   private handleError<T>(operation = 'operation', result?:T){
     return(error:any): Observable<T> => {
       window.alert(`Operacion ${operation} fallida`); //senf the error to logging infraestructure
       return of(result as T);
     };
   }
+
+  
+
 }
 

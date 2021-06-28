@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [],
@@ -16,7 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     AppRoutingModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
   exports:[
     MatListModule,
@@ -24,7 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     AppRoutingModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }
