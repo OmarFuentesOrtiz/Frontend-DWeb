@@ -19,7 +19,6 @@ export class LogeandoComponent implements OnInit {
   validar(){
 
     for(var i=0; i<this.usuarios.length; i++){
-      console.log('patata' + this.usuarios[i].name)
       if(this.usuarios[i].name==this.value){
         console.log(this.usuarios[i].name)
         this.router.navigate(['usuario', this.usuarios[i].id, 'servicios']);

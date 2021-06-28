@@ -44,7 +44,7 @@
             && servicioregion(servicio) ">
                 <mat-card class="card-theme">
                     <mat-card-header>
-                        <mat-card-title> {{servicio.name}} </mat-card-title>
+                        <mat-card-title> {{servicio.name | uppercase }} </mat-card-title>
                     </mat-card-header>
                     <img mat-card-image class="imageCard" [src]="getImg(servicio.img)" alt="imagen del lugar">
                     <mat-card-content>
