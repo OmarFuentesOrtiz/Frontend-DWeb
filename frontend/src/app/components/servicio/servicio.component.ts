@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Anfitrion } from 'src/app/model/anfitrion';
 import { Servicio } from 'src/app/model/servicio';
 import { TwoValModel } from 'src/app/model/two-val-model';
-import { Usuario } from 'src/app/model/Usuario';
+import { Usuario } from 'src/app/model/usuario';
 import { ControllerService } from 'src/app/services/controller.service';
 
 @Component({

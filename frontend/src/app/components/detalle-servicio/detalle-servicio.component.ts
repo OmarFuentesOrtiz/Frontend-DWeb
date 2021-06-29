@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Review } from 'src/app/model/review';
 import { Servicio } from 'src/app/model/servicio';
-import { Usuario } from 'src/app/model/Usuario';
+import { Usuario } from 'src/app/model/usuario';
 import { ControllerService } from 'src/app/services/controller.service';
 
 @Component({

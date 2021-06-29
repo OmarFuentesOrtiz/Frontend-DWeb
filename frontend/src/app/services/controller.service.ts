@@ -5,7 +5,7 @@ import { ServicioForm} from "../model/servicio-form";
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Anfitrion } from '../model/anfitrion';
-import { Usuario } from '../model/Usuario';
+import { Usuario } from '../model/usuario';
 import { Servicio } from '../model/servicio';
 import { Review } from '../model/review';
 import {UsuarioForm} from "../model/usuario-form";

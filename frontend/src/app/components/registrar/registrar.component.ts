@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Usuario} from "../../model/Usuario";
+import {Usuario} from "../../model/usuario";
 import {ControllerService} from "../../services/controller.service";
 import {UsuarioForm} from "../../model/usuario-form";
 
