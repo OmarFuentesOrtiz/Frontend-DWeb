@@ -71,5 +71,28 @@
         <br>
         <button class="btn btn-primary" (click)="submitted=false">Edit</button>
     </div>
+
+    <h2>Idiomas: </h2>
+    <div *ngFor="let i of idiomas">
+        <p>{{i.name}}<p>
+
+    </div>
+
+    <h2>Idiomas: </h2>
+    <div class="form-group">
+        <label for="idioma.id">Seleccione su idioma</label>
+        <select class="form-control" id="idioma.id"
+                required
+                [(ngModel)]="idioma" name="idioma"
+                #power="ngModel">
+          <option *ngFor="let i of allidiomas" [value]="i.id">{{i.name}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          idioms is required
+        </div>
+      </div>
+
+
+
 </div>
 

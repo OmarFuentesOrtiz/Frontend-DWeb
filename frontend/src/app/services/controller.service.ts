@@ -9,6 +9,7 @@ import { Usuario } from '../model/Usuario';
 import { Servicio } from '../model/servicio';
 import { Review } from '../model/review';
 import {UsuarioForm} from "../model/usuario-form";
+import { idioma } from '../model/idiomas';
 
 @Injectable({
   providedIn: 'root'
@@ -115,6 +116,21 @@ export class ControllerService {
             catchError(this.handleError<Servicio[]>('getServicios []',))
         );
   }
+
+
+  getIdiomasByUsuarioId(idusuario:number): Observable<idioma[]> {
+    return this.http.get<idioma[]>(`${this.API}idiomas/usuario/${idusuario}`)
+    .pipe(
+      catchError(this.handleError<idioma[]>('getIdiomasByUsuarioID []',))
+    );
+  }
+  getIdiomas(): Observable<idioma[]> {
+    return this.http.get<idioma[]>(`${this.API}idiomas`)
+    .pipe(
+      catchError(this.handleError<idioma[]>('getIdiomas []',))
+    );
+  }
+
 
   getServicio(id: number): Observable<Servicio>{
     return this.http.get<Servicio>(`${this.API}servicios/${id}`)

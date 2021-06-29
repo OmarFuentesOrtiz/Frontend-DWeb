@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/model/Usuario';
 import { ControllerService } from 'src/app/services/controller.service';
 import {UpUsuario} from "../../model/up-usuario";
 import {TwoValModel} from "../../model/two-val-model";
+import { idioma } from 'src/app/model/idiomas';
 
 @Component({
   selector: 'app-perfil',
@@ -14,7 +15,9 @@ export class PerfilComponent implements OnInit {
 
   usuario: Usuario;
   usuarioId: number;
-
+  idiomas: idioma[];
+  idioma: string;
+  allidiomas: idioma[];
   roles?: TwoValModel[];
   save_model = new UpUsuario();
 
@@ -28,6 +31,8 @@ export class PerfilComponent implements OnInit {
     this.save_model.id= this.usuarioId;
     this.getAllRoles();
     this.getUsuario();
+    this.getidiomas();
+    this.getallidiomas();
   }
 
   getAllRoles():void {
@@ -38,6 +43,16 @@ export class PerfilComponent implements OnInit {
   getUsuario():void {
     this.controllerService.getUsuarioById(this.usuarioId)
         .subscribe((result:any) => { this.usuario = result.data })
+  }
+
+  getidiomas():void {
+    this.controllerService.getIdiomasByUsuarioId(this.usuarioId)
+        .subscribe((result:any) => { this.idiomas = result.data })
+  }
+
+  getallidiomas():void {
+    this.controllerService.getAllIdiomas()
+        .subscribe((result:any) => { this.allidiomas = result.data })
   }
 
   // submit(email:string, nick:string, rol:number){
