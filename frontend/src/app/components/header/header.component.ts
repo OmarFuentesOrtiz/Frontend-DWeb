@@ -13,8 +13,8 @@ export class HeaderComponent implements OnInit {
   @Input() usuario_header_id: number;
   @Input() usuario_header_rol: string;
 
-  // AddNewService | Servicio | Anfitrion | Perfil
-  lbl: boolean[] = [false, true, false, true];
+  // AddNewService | Servicio | Anfitrion | Perfil | Mis servicios
+  lbl: boolean[] = [false, true, false, true, false];
 
   constructor(private router: Router) {
     console.log(this.router.url);
@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
   activateBtn(x:string) {
     console.log(this.usuario_header_id, this.usuario_header_rol)
     console.log("Esta es mi ruta: "+x);
-    if (this.usuario_header_rol=="Anfitrión") { this.lbl[0] = true; }
+    if (this.usuario_header_rol=="Anfitrión") { this.lbl[0] = true; this.lbl[4]=true;}
     switch (x) {
       case ('/usuario/' + this.usuario_header_id + '/servicios'):
         this.lbl[1] = false; this.lbl[2] = true; break;

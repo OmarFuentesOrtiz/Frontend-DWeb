@@ -28,7 +28,6 @@ export class ServicioComponent implements OnInit {
   selectedPlataforma = '';
   selectedRegion = '';
 
-  checked = false;
 
   constructor(private controllerService: ControllerService,
     private route: ActivatedRoute) { }
@@ -40,7 +39,6 @@ export class ServicioComponent implements OnInit {
     this.getAllModalidades();
     this.getAllPlataformas();
     this.getAllRegiones(); 
-    this.setCheck();
   }
   getUsuario(): void {
     this.controllerService.getUsuarioById(this.usuarioId)
@@ -117,23 +115,5 @@ export class ServicioComponent implements OnInit {
     this.controllerService.getAllRegiones()
         .subscribe((result:any)=> this.regiones = result.data)
   }
-
-  setCheck(): void {
-    if(this.checked == false){
-      if(this.usuario.same_language == true){
-        this.controllerService.switchLanguage(this.usuarioId).
-        subscribe((result:any) => console.log(result));
-      }
-    }
-    else{
-      if(this.usuario.same_language == false){
-        this.controllerService.switchLanguage(this.usuarioId).
-        subscribe((result:any) => console.log(result));
-      }
-    }
-    this.getAllServicios();
-    console.log('well done')
-  }
-
 
 }

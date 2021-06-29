@@ -18,6 +18,11 @@
             <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario_header_id, 'anfitrion']" routerLinkActive='active'>Anfitriones</a>
         </ng-container>
         <a *ngIf = "lbl[3]==true" mat-button class="btn btn-danger" [routerLink]= "['/', usuario_header_id, 'perfil']" routerLinkActive='active'>Perfil</a>
+        <a *ngIf = "lbl[4]==true" mat-button class="btn btn-danger" [routerLink]= "['/', usuario_header_id, 'misservicios']" routerLinkActive='active'>Mis servicios</a>
+
+        <span class="example-spacer"></span>
+
+        <a mat-button class="btn btn-danger" [routerLink]="['/','login']" routerLinkActive='active'>Cerrar Sesión</a>
 
     </mat-toolbar>
 </div>
