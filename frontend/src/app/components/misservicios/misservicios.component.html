@@ -1,0 +1,23 @@
+<app-header [usuario_header_id]="usuario.id" [usuario_header_rol]="usuario.rol_name"></app-header>
+<h2>Bienvenido {{usuario.rol_name}} {{usuario.name}} </h2>
+<h2>Descubre los nuevos servicios</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let servicio of this.servicios">
+            <mat-card class="card-theme">
+                <mat-card-header>
+                    <mat-card-title> {{servicio.name | uppercase }} </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image class="imageCard" [src]="getImg(servicio.img)" alt="imagen del lugar">
+                <mat-card-content>
+                    <p> Tags: {{servicio.region_name}} || {{servicio.modalidad_name}} || {{servicio.plataforma_name}} </p>
+                </mat-card-content>
+                <mat-card-actions>
+<!--                        <a mat-button class="btn btn-danger" [routerLink]="['/','usuario', usuario?.id, 'anfitrion']" routerLinkActive='active'>Anfitriones</a>-->
+                    <button mat-button [routerLink]="['/usuario', usuario?.id, 'detalleServicio', servicio.id]" class="btn btn-dark">Detalles</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

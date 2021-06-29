@@ -9,6 +9,7 @@ import {PagoFormComponent} from "./components/pago-form/pago-form.component";
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { DetalleAnfitrionComponent } from './components/detalle-anfitrion/detalle-anfitrion.component';
 import { DetalleServicioComponent } from './components/detalle-servicio/detalle-servicio.component';
+import { MisserviciosComponent } from './components/misservicios/misservicios.component';
 
 const routes: Routes = [
   { path: '', component: LogeandoComponent },
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path: ':id/servicioForm', component: ServicioFormComponent},
   { path: 'pagoForm', component: PagoFormComponent},
   { path: ':id/perfil', component: PerfilComponent},
+  { path: ':id/misservicios', component: MisserviciosComponent},
+  
   
 ];
 
