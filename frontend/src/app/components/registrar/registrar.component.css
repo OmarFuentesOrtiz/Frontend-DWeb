@@ -52,19 +52,6 @@ body {
     background: rgba(0, 0, 0, 0.85);
     z-index: -1;
   }
-  .brand a.logo {
-    color: #f95959;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-    line-height: 1em;
-  }
-  .brand a.logo span {
-    font-size: 30px;
-    color: #fff;
-    transform: translateX(-5px);
-    display: inline-block;
-  }
   .brand .heading {
     position: absolute;
     top: 50%;
@@ -212,17 +199,6 @@ body {
   .form form .CTA {
     margin-top: 30px;
   }
-  .form form .CTA input {
-    font-size: 12px;
-    text-transform: uppercase;
-    padding: 5px 30px;
-    background: #f95959;
-    color: #fff;
-    border-radius: 30px;
-    margin-right: 20px;
-    border: none;
-    font-family: "Montserrat", sans-serif;
-  }
   .form form .CTA a.switch {
     font-size: 13px;
     font-weight: 400;
@@ -232,21 +208,6 @@ body {
     transition: all 0.3s;
   }
   .form form .CTA a.switch:hover {
-    color: #f95959;
-  }
-  
-  footer {
-    text-align: center;
-  }
-  footer p {
-    color: #777;
-  }
-  footer p a, footer p a:focus {
-    color: #b8b09f;
-    transition: all 0.3s;
-    text-decoration: none !important;
-  }
-  footer p a:hover, footer p a:focus:hover {
     color: #f95959;
   }
   
