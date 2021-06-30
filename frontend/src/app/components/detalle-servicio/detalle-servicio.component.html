@@ -16,7 +16,7 @@
                     <br >Hasta: {{servicio.end_valid_date | date }} </p>
                 <h1> Precio: {{servicio.price | currency }} </h1>
                 <mat-card-actions>
-                    <button mat-button [routerLink]="['/pagoForm']" class="btn btn-dark">Comprar este servicio</button>
+                    <button mat-button [routerLink]= "['/', usuarioId, 'pagoForm', servicioId]" class="btn btn-dark">Comprar este servicio</button>
                 </mat-card-actions>
             </mat-card>
         </div>

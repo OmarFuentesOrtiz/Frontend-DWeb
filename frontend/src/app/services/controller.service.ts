@@ -10,6 +10,7 @@ import { Servicio } from '../model/servicio';
 import { Review } from '../model/review';
 import {UsuarioForm} from "../model/usuario-form";
 import { idioma } from '../model/idiomas';
+import {PagoForm} from "../model/pago-form";
 
 @Injectable({
   providedIn: 'root'
@@ -96,6 +97,13 @@ export class ControllerService {
         );
   }
 
+  postPago(body: PagoForm): Observable<{}> {
+    return this.http.post<any>(`${this.API}pagos`, body)
+        .pipe(
+            tap(_ => window.alert('Disfrute de su nueva experiencia')),
+            catchError(this.handleError<any>('postPago',))
+        );
+  }
   postServicio(body: ServicioForm): Observable<{}> {
     return this.http.post<ServicioForm>(`${this.API}servicios`, body)
     .pipe(

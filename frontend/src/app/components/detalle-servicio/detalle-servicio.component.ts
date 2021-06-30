@@ -16,7 +16,7 @@ export class DetalleServicioComponent implements OnInit {
   public reservaForm: FormGroup;
   public servicio: Servicio = new Servicio();
   // public usuario: Usuario = new Usuario();
-  private servicioId: number;
+  servicioId: number;
   public reviews: Review[];
 
   usuario: Usuario;

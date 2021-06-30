@@ -21,11 +21,9 @@ const routes: Routes = [
   { path: 'usuario/:id/anfitrion', component: AnfitrionComponent },
   { path: 'login', component: LogeandoComponent},
   { path: ':id/servicioForm', component: ServicioFormComponent},
-  { path: 'pagoForm', component: PagoFormComponent},
+  { path: ':id/pagoForm/:sid', component: PagoFormComponent},
   { path: ':id/perfil', component: PerfilComponent},
   { path: ':id/misservicios', component: MisserviciosComponent},
-  
-  
   { path: ':id/misidiomas', component: MisidiomasComponent},
 ];
 
