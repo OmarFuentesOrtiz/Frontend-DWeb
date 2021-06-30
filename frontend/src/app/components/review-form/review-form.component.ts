@@ -20,6 +20,7 @@ export class ReviewFormComponent implements OnInit {
   ngOnInit(): void {
     this.usuarioId = Number(this.route.snapshot.paramMap.get('id'));
     this.servicioId = Number(this.route.snapshot.paramMap.get('sid'));
+    this.model.reported = false;
   }
 
   model = new Review();
