@@ -103,6 +103,13 @@ export class ControllerService {
       catchError(this.handleError<ServicioForm>('postServicios',))
     );
   }
+  postReview(body: Review): Observable<{}> {
+    return this.http.post<any>(`${this.API}reviews`, body)
+    .pipe(
+      tap(_ => window.alert('Review creado satisfactoriamente')),
+      catchError(this.handleError<Review>('postReview',))
+    );
+  }
 
   getAllServicios(): Observable<Servicio[]> {
     return this.http.get<Servicio[]>(`${this.API}servicios`)
