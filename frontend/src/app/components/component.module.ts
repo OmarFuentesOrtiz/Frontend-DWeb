@@ -15,6 +15,7 @@ import { DetalleServicioComponent } from './detalle-servicio/detalle-servicio.co
 import { DetalleAnfitrionComponent } from './detalle-anfitrion/detalle-anfitrion.component';
 import {RegistrarComponent} from "./registrar/registrar.component";
 import { MisserviciosComponent } from './misservicios/misservicios.component';
+import { MisidiomasComponent } from './misidiomas/misidiomas.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MisserviciosComponent } from './misservicios/misservicios.component';
     DetalleAnfitrionComponent,
     RegistrarComponent,
     MisserviciosComponent,
+    MisidiomasComponent,
   ],
   imports: [
     CommonModule,

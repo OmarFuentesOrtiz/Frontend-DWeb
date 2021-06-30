@@ -1,0 +1,46 @@
+<app-header [usuario_header_id]="usuario.id" [usuario_header_rol]="usuario.rol_name"></app-header>
+<h2>Mis idiomas</h2>
+
+<div class="container">
+    <mat-selection-list #shoes [multiple]="false">
+        <mat-list-option *ngFor="let idioma of misidiomas"   [value]="idioma.id">
+
+          {{idioma.name}}
+         
+        </mat-list-option>
+        <span class="example-spacer"></span>
+     
+      </mat-selection-list>
+      <button type="button" class="btn btn-danger" (click)="borrar(shoes.selectedOptions.selected[0]?.value)" >Borrar idioma</button>
+
+      
+      <p>
+        Option selected: {{shoes.selectedOptions.selected[0]?.value}}
+      </p>
+
+      </div>
+      
+      
+
+
+
+      <h2>Lista de idiomas</h2>
+
+<div class="container">
+    <mat-selection-list #language [multiple]="false">
+        <mat-list-option *ngFor="let idioma of idiomas"   [value]="idioma.id">
+
+          {{idioma.name}}
+         
+        </mat-list-option>
+        <span class="example-spacer"></span>
+     
+      </mat-selection-list>
+      <button type="button" class="btn btn-success" (click)="agregar(language.selectedOptions.selected[0]?.value)" >Añadir idioma</button>
+
+      
+      <p>
+        Option selected: {{language.selectedOptions.selected[0]?.value}}
+      </p>
+
+      </div>

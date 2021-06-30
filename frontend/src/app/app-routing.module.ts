@@ -10,6 +10,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { DetalleAnfitrionComponent } from './components/detalle-anfitrion/detalle-anfitrion.component';
 import { DetalleServicioComponent } from './components/detalle-servicio/detalle-servicio.component';
 import { MisserviciosComponent } from './components/misservicios/misservicios.component';
+import { MisidiomasComponent } from './components/misidiomas/misidiomas.component';
 
 const routes: Routes = [
   { path: '', component: LogeandoComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: ':id/misservicios', component: MisserviciosComponent},
   
   
+  { path: ':id/misidiomas', component: MisidiomasComponent},
 ];
 
 @NgModule({

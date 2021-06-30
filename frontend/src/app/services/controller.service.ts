@@ -131,6 +131,7 @@ export class ControllerService {
       catchError(this.handleError<idioma[]>('getIdiomasByUsuarioID []',))
     );
   }
+
   getIdiomas(): Observable<idioma[]> {
     return this.http.get<idioma[]>(`${this.API}idiomas`)
     .pipe(
@@ -138,6 +139,21 @@ export class ControllerService {
     );
   }
 
+  deleteidiomausuario(idioma_id:number,usuario_id:number): Observable<Usuario>{
+console.log(`${this.API}usuarios/${usuario_id}/idioma/${idioma_id}`)
+    return this.http.delete<Usuario>(`${this.API}usuarios/${usuario_id}/idioma/${idioma_id}`)
+    .pipe(
+      catchError(this.handleError<Usuario>('delete idioma[]',))
+    );
+  }
+  
+  addidiomausuario(idioma_id:number,usuario_id:number): Observable<any>{
+    console.log(`${this.API}usuarios/${usuario_id}/idioma/${idioma_id}`)
+        return this.http.put<any>(`${this.API}usuarios/${usuario_id}/idioma/${idioma_id}`,null)
+        .pipe(
+          catchError(this.handleError<any>('add idioma[]',))
+        );
+      }
 
   getServicio(id: number): Observable<Servicio>{
     return this.http.get<Servicio>(`${this.API}servicios/${id}`)
